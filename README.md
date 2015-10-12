@@ -1,2 +1,3 @@
-# monsieurv.github.io
-YtoTech blog
+# YtoTech blog
+
+See http://blog.ytotech.com
