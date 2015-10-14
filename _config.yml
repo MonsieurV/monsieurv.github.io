@@ -15,11 +15,3 @@ url: http://blog.ytotech.com
 
 sass:
     style: compressed
-
-defaults:
-  -
-    scope:
-      path: ""
-    values:
-      layout: "default"
-      author: ""

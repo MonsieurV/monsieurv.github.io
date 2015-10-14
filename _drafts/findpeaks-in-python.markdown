@@ -1,9 +1,10 @@
 ---
-layout: default
-title: Peak detection in the Python world
+layout: news_item
+title: "Peak detection in the Python world"
+author: monsieurv
+version: 1.0.0
+categories: [dsp]
 ---
-
-# Super blog post
 
 As I was working on a signal processing project, I've come to need an equivalent
 of the MatLab `findpeaks` function in the Python world.
