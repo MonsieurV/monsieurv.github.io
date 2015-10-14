@@ -4,6 +4,7 @@ title: "Peak detection in the Python world"
 author: monsieurv
 version: 1.0.0
 categories: [dsp]
+tags: [dsp, python]
 ---
 
 As I was working on a signal processing project, I've come to need an equivalent
