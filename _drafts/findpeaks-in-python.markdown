@@ -1,8 +1,5 @@
 ---
-layout: news_item
 title: "Peak detection in the Python world"
-author: monsieurv
-version: 1.0.0
 categories: [dsp]
 tags: [dsp, python]
 ---

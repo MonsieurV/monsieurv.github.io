@@ -15,3 +15,11 @@ url: http://blog.ytotech.com
 
 sass:
     style: compressed
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "news_item"
+      author: monsieurv
