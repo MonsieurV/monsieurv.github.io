@@ -21,5 +21,5 @@ defaults:
     scope:
       path: ""
     values:
-      layout: "news_item"
+      layout: "post"
       author: monsieurv

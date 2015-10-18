@@ -136,25 +136,6 @@ nav {
   }
 }
 
-/*
- * This code is courtesy Ben Balter, modified by Parker Moore for jekyllrb.com
- * http://ben.balter.com/2014/03/13/pages-anchor-links/
- */
-.header-link {
-  position: relative;
-  left: 0.5em;
-  opacity: 0;
-  font-size: 0.8em;
-  @include transition(opacity 0.2s ease-in-out 0.1s);
-}
-h2:hover .header-link,
-h3:hover .header-link,
-h4:hover .header-link,
-h5:hover .header-link,
-h6:hover .header-link {
-  opacity: 1;
-}
-
 @media (max-width: 768px) {
   .main-nav ul {
     text-align: right;
@@ -208,26 +189,7 @@ footer {
   }
 }
 
-/* Intro */
-
-.intro {
-
-  .unit { padding: 10px 0 40px; }
-
-  p {
-    font-size: 1.75em;
-    line-height: 1em;
-    margin: 0;
-  }
-}
-
-@media (min-width: 569px) {
-  .intro p { font-size: 3.2em; }
-}
-
-/* Article - Used for both docs and news */
-
-
+/* Article - Used for blog posts. */
 article {
   background-color: #444;
   @include border-radius(10px);
@@ -252,8 +214,7 @@ article {
   }
 }
 
-/* Right-side nav - used by both docs and news */
-
+/* Right-side nav - used by blog posts. */
 aside {
   padding-top: 30px;
 
@@ -295,92 +256,7 @@ aside {
   }
 }
 
-/* Documentation */
-
-.docs {
-
-  article { min-height: 800px; }
-
-  .content { padding: 0; }
-}
-
-.section-nav {
-  text-align: center;
-  padding-top: 40px;
-  position: relative;
-  background: url(../img/article-footer.png) top center no-repeat;
-  margin: 40px -20px 10px;
-
-  > div { width: 49.5%; }
-
-  a,
-  span {
-    color: #fff;
-    font-size: 16px;
-    text-transform: uppercase;
-    font-weight: 700;
-    padding: 8px 12px 10px;
-    @include border-radius(5px);
-    /*border: 1px solid #333;*/
-    @include box-shadow(0 1px 3px rgba(0,0,0,.3), inset 0 1px 1px rgba(255,255,255,.5));
-    background-color: #767676;
-  }
-
-  a:hover {
-    color: #fff;
-    background-color: #888;
-  }
-
-  .next,
-  .prev { position: relative; }
-
-  .next:after,
-  .prev:before {
-    font-size: 36px;
-    color: #222;
-    font-weight: 900;
-    text-shadow: 0 1px 0 rgba(255,255,255,.4);
-    position: absolute;
-    top: -7px;
-  }
-
-  .next:after {
-    content: '\203A';
-    right: 10px;
-  }
-
-  .prev:before {
-    content: '\2039';
-    left: 10px;
-  }
-
-  .prev,
-  .prev:hover { padding-left: 30px; }
-
-  .next,
-  .next:hover { padding-right: 30px; }
-
-  .disabled {
-    opacity: .5;
-    cursor: default;
-  }
-}
-
-.improve {
-  padding-top: 25px;
-  font-size: 16px;
-  a {
-    color: #999;
-  }
-}
-
-.docs-nav-mobile select {
-  color: #000;
-  width: 100%;
-}
-
-/* News */
-
+/* Blog posts. */
 article h2:first-child { margin-top: 0; }
 
 .post-category,
@@ -461,8 +337,6 @@ article h2:first-child { margin-top: 0; }
 }
 
 /* Code Highlighting */
-
-
 pre,
 code {
   white-space: pre;
@@ -507,7 +381,6 @@ h5 > code,
 }
 
 /* HTML Elements */
-
 h1, h2, h3, h4, h5, h6 { margin: 0; }
 
 a {
@@ -746,22 +619,9 @@ code.output {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9e2812', endColorstr='#6f0d0d',GradientType=0 );
 }
 
-.unreleased {
-  background-color: #cd9239;
-  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2NkOTIzOSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNhMjc1MjgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(205,146,57,1)), to(rgba(162,117,40,1)));
-  background-image: -webkit-linear-gradient(top, rgba(205,146,57,1) 0%, rgba(162,117,40,1) 100%);
-  background-image: -moz-linear-gradient(top, rgba(205,146,57,1) 0%, rgba(162,117,40,1) 100%);
-  background-image: -o-linear-gradient(top, rgba(205,146,57,1) 0%, rgba(162,117,40,1) 100%);
-  background-image: linear-gradient(to bottom, rgba(205,146,57,1) 0%,rgba(162,117,40,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cd9239', endColorstr='#a27528',GradientType=0 );
-}
-
 .info:before { border-color: transparent #00617f #00617f transparent; }
 
 .warning:before { border-color: transparent #6f0d0d #6f0d0d transparent; }
-
-.unreleased:before { border-color: transparent #664719 #664719 transparent; }
 
 .info:after {
   content: '\24D8';
@@ -785,16 +645,6 @@ code.output {
   text-shadow: 0 -1px 0 rgba(0,0,0,.5);
 }
 
-.unreleased:after {
-  content: '\2692';
-  color: #2b2a12;
-  position: absolute;
-  top: 8px;
-  left: 15px;
-  font-size: 38px;
-  font-weight: 700;
-  text-shadow: 0 1px 0 rgba(255,255,255,.25);
-}
 
 /* Responsive tables */
 
