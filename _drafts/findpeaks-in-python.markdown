@@ -2,6 +2,7 @@
 title: "Peak detection in the Python world"
 categories: [dsp]
 tags: [dsp, python]
+brief: "An overview of the peak detection algorithms in Python."
 ---
 
 As I was working on a signal processing project, I've come to need an equivalent
