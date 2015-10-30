@@ -65,42 +65,28 @@ footer {
 /* Header */
 
 header {
-
-  h1,
-  nav { display: inline-block; }
-
-}
-
-nav {
-
-  ul {
-    padding: 0;
-    margin: 0;
-  }
-
-  li { display: inline-block; }
+  .title a {
+    text-decoration: none;
+    color: #000; }
+  .by h3 { margin: 0; }
 }
 
 /* Footer */
 
 footer {
-  background-color: #212121;
   font-size: 16px;
   padding-bottom: 5px;
-  color: #c0c0c0;
   margin-top: 40px;
 
   a {
     color: #fff;
 
     &:hover {
-
       img { opacity: 1; }
     }
   }
 
   .align-right {
-
     p { display: inline-block; }
   }
 
@@ -124,11 +110,10 @@ footer {
 
 /* Article - Used for blog posts. */
 article {
-  background-color: $blue-tech;
   @include border-radius(10px);
   padding: 20px;
   margin: 0 10px;
-  @include box-shadow(0 3px 10px rgba(0,0,0,.1));
+  border: 1px solid $red-yto;
 }
 
 @media (max-width: 480px) {
@@ -188,10 +173,6 @@ aside {
 }
 
 /* Blog posts. */
-article h2:first-child { margin-top: 0; }
-articleh2 {
-  @include box-shadow(inset 0 3px 30px rgba(0,0,0,.3));
-}
 
 .post-category,
 .post-meta {
@@ -253,21 +234,13 @@ articleh2 {
   vertical-align: middle;
 }
 
-.post-meta {
-  padding: 5px 0;
-  color: #c0c0c0;
-  font-weight: 600;
-  text-shadow: 0 -1px 0 #000;
-}
-
 .post-date,
 .post-author { margin-left: 10px; }
 
-.news article + article {
-  margin-top: -10px;
-  @include border-radius(0 0 10px 10px);
-  border-top: 1px solid #555;
-  @include box-shadow(0 -1px 0 #2f2f2f);
+.post-brief { padding-top: 20px; }
+
+.posts article + article {
+  border-top: none;
 }
 
 /* Code Highlighting */
@@ -315,19 +288,12 @@ h5 > code,
 }
 
 /* HTML Elements */
-h1, h2, h3, h4, h5, h6 { margin: 0; }
-
 a {
   color: $red-yto;
   text-decoration: none;
   @include transition(all .25s);
-
-  &:hover { color: #f90; }
+  &:hover { color: $blue-tech; }
 }
-
-strong { font-weight: 700; }
-
-p { line-height: 1.5em; }
 
 .left { float: left; }
 .right { float: right; }
@@ -339,14 +305,8 @@ p { line-height: 1.5em; }
 
 article {
 
-  h2, h3, h4, h5, h6 { margin: 1em 0; }
-
-  h4 { color: #fff; }
-
   ul li {
-
     p { margin: 0; }
-
     blockquote { margin: 10px 0; }
   }
 
@@ -355,7 +315,6 @@ article {
     line-height: 1.5em;
     margin-bottom: 0.5em;
   }
-
 }
 
 blockquote {
