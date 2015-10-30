@@ -3,16 +3,41 @@
 $red-yto: #b14040;
 $blue-tech: #383866;
 
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+/* NOTE
+html is set to 62.5% so that all the REM measurements throughout Skeleton
+are based on 10px sizing. So basically 1.5rem = 15px :) */
+html {
+  font-size: 62.5%; }
+body {
+  border-top: 5px solid $red-yto;
+  font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: "Droid Serif", Georgia, Times, sans-serif;
 }
 
-body {
-  font: 300 21px Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  border-top: 5px solid $red-yto;
-  font-kerning: normal;
+/* Typography
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Crimson Text", Garamond, serif;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-weight: 300; }
+h1 { font-size: 4.0rem; line-height: 1.2;  letter-spacing: -.1rem;}
+h2 { font-size: 3.6rem; line-height: 1.25; letter-spacing: -.1rem; }
+h3 { font-size: 3.0rem; line-height: 1.3;  letter-spacing: -.1rem; }
+h4 { font-size: 2.4rem; line-height: 1.35; letter-spacing: -.08rem; }
+h5 { font-size: 1.8rem; line-height: 1.5;  letter-spacing: -.05rem; }
+h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
+
+/* Larger than phablet */
+@media (min-width: 640px) {
+  h1 { font-size: 5.0rem; }
+  h2 { font-size: 4.2rem; }
+  h3 { font-size: 3.6rem; }
+  h4 { font-size: 3.0rem; }
+  h5 { font-size: 2.4rem; }
+  h6 { font-size: 1.5rem; }
 }
 
 .clear {
@@ -104,7 +129,6 @@ article {
   padding: 20px;
   margin: 0 10px;
   @include box-shadow(0 3px 10px rgba(0,0,0,.1));
-  font-size: 16px;
 }
 
 @media (max-width: 480px) {
@@ -118,7 +142,6 @@ article {
 @media (min-width: 768px) {
   article {
     padding: 40px 40px 30px;
-    font-size: 21px;
   }
 }
 
@@ -333,11 +356,6 @@ article {
     margin-bottom: 0.5em;
   }
 
-}
-
-h5, h6 {
-  font-size: 1em;
-  font-style: italic;
 }
 
 blockquote {
