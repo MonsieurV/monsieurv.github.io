@@ -11,3 +11,8 @@ See http://blog.ytotech.com
   * Compresser un flux de données inertielles
   * Systèmes de paiement SystemPay Vs. Paypal Vs. Stripe Vs. Baintree
   * How to authenticate your RESP API when you want to make it simple: BasicAuth, Digest, OAuth2, custom?
+
+* Faire un blog sur la survie et l'entreprise (entités économiques)
+  * Capacité d'adaptation : l'adaptation ne se fait pas forcément là où vous l'attendez
+  * Life & death of a cell
+  * http://changethis.com/manifesto/68.01.37Signals/pdf/68.01.37Signals.pdf
