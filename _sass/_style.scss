@@ -198,14 +198,6 @@ aside {
   text-transform: uppercase;
 }
 
-@media (max-width: 568px) {
-  .post-category { padding-left: 30px; }
-}
-
-@media (min-width: 768px) {
-  .post-category { margin-left: -50px; }
-}
-
 .avatar {
   @include border-radius(3px);
   display: inline-block;
