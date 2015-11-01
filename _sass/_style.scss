@@ -85,9 +85,16 @@ footer {
 /* Header */
 
 header {
-  .by h3 {
-    margin: 0;
-    color: $red-yto; }
+  .by {
+    h3 {
+      margin: 0;
+      color: $red-yto;
+    }
+    img {
+      height: auto;
+      max-width: 70%;
+    }
+  }
 }
 
 /* Footer */
