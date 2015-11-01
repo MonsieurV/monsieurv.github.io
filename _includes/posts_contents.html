@@ -7,11 +7,21 @@
     </ul>
     <h4>Recent Posts</h4>
     <ul>
-      {% for post in site.posts limit:5 %}
+      {% for post in site.posts limit:3 %}
       <li class="{% if page.title == post.title %}current{% endif %}">
         <a href="{{ post.url }}">{{ post.title }}</a>
       </li>
       {% endfor %}
     </ul>
+    {% for category in page.categories %}
+    {% if site.categories.[category].size > 1 %}
+      <h4>{{ category }}</h4>
+      {% for post in site.categories.[category] limit:3 %}
+        <li>
+          <a href="{{ post.url }}">{{ post.title }}</a>
+        </li>
+      {% endfor %}
+    {% endif %}
+    {% endfor %}
   </aside>
 </div>
