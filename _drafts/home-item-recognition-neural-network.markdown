@@ -2,6 +2,7 @@
 title: "Home item recognition using neural networks"
 categories: [Neural networks]
 tags: [Neural networks, Machine learning]
+draft: true
 ---
 
 A working implementation of my real-time activity recognition system:
