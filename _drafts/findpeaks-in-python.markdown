@@ -19,28 +19,21 @@ Wondering how to make our algorithms works as simply with Python that they were 
 
 ![Plot of peakdetect](https://raw.githubusercontent.com/MonsieurV/py-findpeaks/master/images/sixtenbe_peakdetect.png)
 
-Going ahead I've checkout the GNU Octave project, a processing-intended language quite similar to MatLab. The Octave-Forge repository hosts a digital signal processing package with a [`findpeaks` function][findpeaks_of_ref]. Bingo? Well, yes and no. The function have an appealing interface, with a great filtering support. But this is not a Python project. As you'll find way to call your Octave distribution from your Python code (see [oct2py][]), it surely won't be effective at large scale and makes the requirements for your code even more complex.
+Going ahead I've checkout the GNU Octave project, a processing-intended language quite similar to MatLab. The Octave-Forge repository hosts a digital signal processing package with a [`findpeaks` function][findpeaks_of_ref]. Bingo? Well, yes and no. The function have an appealing interface, with a great filtering support. But this is not a Python project: as you'll find ways to call your Octave distribution from your Python code (see [oct2py][]), it surely won't be effective at large scale and makes the requirements for your code more complex.
 
 ![Plot of Octave-Forge findpeaks](https://raw.githubusercontent.com/MonsieurV/py-findpeaks/master/images/octave_findpeaks.png)
 
-As I was going to code a Python adaptation of the Octave-Force `findpeaks`, I finally found what I was searching: a Python native equivalent of the MatLab `findpeaks`, with minimum distance and height filtering support. It comes
+As I was going to code a Python adaptation of the Octave-Force `findpeaks`, I finally found what I was searching: a Python native equivalent of the MatLab `findpeaks`, with minimum distance and height filtering support. I even found two!
+
+The first is [a package][PeakUtils] by Lucas Hermann Negri that provides 1D peak detection utilities. Its [`indexes`][indexes] function allows you to detect peaks with minimum height (`thres` param) and distance (`min_dist` param) filtering.
 
 ![Plot of PeakUtils indexes](https://raw.githubusercontent.com/MonsieurV/py-findpeaks/master/images/peakutils_indexes.png)
 
+The second is published on a [jupyter notebook][] and is written by by Marcos Duarte. Not easy to find, but the greatest for my need: the parameter interface for filtering is modeled after the MatLab `findpeaks`. It comes as a single source file and only depends on Numpy, so it is no big deal to integrate with your code. And more importantly it will consistently get you the same results than with MalLab `findpeaks`!
+
 ![Plot of Marcos Duarte detect_peaks](https://raw.githubusercontent.com/MonsieurV/py-findpeaks/master/images/detect_peaks.png)
 
-To work with an interface as near as possible to the MatLab `findpeaks`, I use this wrapper over the `detect_peaks` function:
-
-```
-def matlabFindpeaks(data, minPeakHeight = 0, minPeakDistance = 0):
-    """
-    return -- a tuple of two list: (peak_value, position) """
-    # Use detect_peaks from Marcos Duarte.
-    indexes = detect_peaks(data,
-        mph=minPeakHeight, mpd=minPeakDistance)
-    # Return the peaks values and their indexes.
-    return (data[indexes], indexes)
-```
+To avoid others the same roaming I've put on GitHub [an overview][overview_github] of these findings. If you find another open-source alternatives, let me know so we update the list.
 
 TODO: add illustration legend.
 
@@ -51,3 +44,7 @@ TODO: add illustration legend.
 [peakdetect]: https://gist.github.com/sixtenbe/1178136
 [findpeaks_of_ref]: http://octave.sourceforge.net/signal/function/findpeaks.html
 [oct2py]: https://github.com/blink1073/oct2py
+[overview_github]: https://github.com/MonsieurV/py-findpeaks
+[PeakUtils]: https://bitbucket.org/lucashnegri/peakutils
+[indexes]: http://pythonhosted.org/PeakUtils/reference.html#peakutils.peak.indexes
+[jupyter notebook]: http://nbviewer.ipython.org/github/demotu/BMC/blob/master/notebooks/DetectPeaks.ipynb
