@@ -42,6 +42,8 @@ def matlabFindpeaks(data, minPeakHeight = 0, minPeakDistance = 0):
     return (data[indexes], indexes)
 ```
 
+TODO: add illustration legend.
+
 [Equisense]: http://www.equisense.com
 [findpeaks_ref]: http://fr.mathworks.com/help/signal/ref/findpeaks.html
 [find_peaks_cwt_ref]: http://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.find_peaks_cwt.html
