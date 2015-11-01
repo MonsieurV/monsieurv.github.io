@@ -35,8 +35,6 @@ The second is published on a [jupyter notebook][] and is written by by Marcos Du
 
 To avoid others the same roaming I've put on GitHub [an overview][overview_github] of these findings. If you find another open-source alternatives, let me know so we update the list.
 
-TODO: add illustration legend.
-
 [Equisense]: http://www.equisense.com
 [findpeaks_ref]: http://fr.mathworks.com/help/signal/ref/findpeaks.html
 [find_peaks_cwt_ref]: http://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.find_peaks_cwt.html
