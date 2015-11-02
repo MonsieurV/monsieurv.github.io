@@ -33,7 +33,7 @@ The second is published on a [jupyter notebook][] and is written by Marcos Duart
 
 ![Plot of Marcos Duarte detect_peaks](https://raw.githubusercontent.com/MonsieurV/py-findpeaks/master/images/detect_peaks.png)
 
-To avoid others the same roaming I've put on GitHub [an overview][overview_github] of these findings. If you got another open-source alternatives, let me know so we update the list.
+To avoid others the same roaming I've put on GitHub [an overview][overview_github] of these findings. Let me know if you got another open-source alternatives so we update the list.
 
 [Equisense]: http://www.equisense.com
 [findpeaks_ref]: http://fr.mathworks.com/help/signal/ref/findpeaks.html
