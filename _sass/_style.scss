@@ -192,7 +192,11 @@ aside {
   font-size: .9em;
 }
 
-.post-content img { max-width: 100% }
+.post-content {
+  img { max-width: 100% }
+
+  /* TODO Center images in posts. */
+}
 
 .label {
   text-transform: uppercase;
