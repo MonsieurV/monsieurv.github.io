@@ -9,7 +9,9 @@ draft: true
 As I was working on a signal processing project for [Equisense][], I've come to need an equivalent
 of the MatLab [`findpeaks` function][findpeaks_ref] in the Python world.
 
-![Plot of MatLab findpeaks](https://raw.githubusercontent.com/MonsieurV/py-findpeaks/master/images/matlab_findpeaks.png)
+![Plot of MatLab findpeaks](/img/2015-11-01-findpeaks-in-python/matlab_findpeaks.png)
+
+`findpeaks(select, 'MinPeakDistance', 2, 'MinPeakHeight', 0.00005)` on 100 samples of the Laurent Garnier famous track Crispy Bacon.
 
 Contrary to other MatLab functions that have direct or very near equivalents in the Numpy or Scipy scientific and processing packages, it is no easy task to get same results from the Scipy [`find_peaks_cwt` function][find_peaks_cwt_ref] that from the MatLab `findpeaks`. Even worse, the wavelet convolution approach of `find_peaks_cwt` is not straightforward to work with. It adds complexity that is of no use for well-filtered and noiseless signals.
 
