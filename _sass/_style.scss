@@ -194,8 +194,14 @@ aside {
 
 .post-content {
   img { max-width: 100% }
-
-  /* TODO Center images in posts. */
+  figure {
+    margin: 0;
+    text-align: center;
+    figcaption {
+      font-size: 0.9em;
+      font-style: italic;
+    }
+  }
 }
 
 .label {
