@@ -45,8 +45,7 @@ Going ahead I've checkout the GNU Octave project, a processing-intended language
 from oct2py import octave
 cb = np.array([-0.010223, ... ])
 octave.eval("pkg load signal")
-(peaks, indexes) = octave.findpeaks(cb, 'DoubleSided',
-    'MinPeakHeight', 0.04, 'MinPeakDistance', 100, 'MinPeakWidth', 0)
+(peaks, indexes) = octave.findpeaks(cb, 'DoubleSided', 'MinPeakHeight', 0.04, 'MinPeakDistance', 100, 'MinPeakWidth', 0)
 ```
 
 {% include figure.html img="/img/2015-11-01-findpeaks-in-python/octave_findpeaks.png" caption="Octave-Forge findpeaks is doing great, with double sided results and extended filtering. But this is not a Python project." alt="Plot of results from Octave-Forge findpeaks" %}
@@ -58,8 +57,7 @@ The first is [the PeakUtils package][PeakUtils] by Lucas Hermann Negri which pro
 ```import numpy as np
 import peakutils.peak
 cb = np.array([-0.010223, ... ])
-indexes = peakutils.peak.indexes(cb,
-    thres=0.02/max(cb), min_dist=100)
+indexes = peakutils.peak.indexes(cb, thres=0.02/max(cb), min_dist=100)
 ```
 
 {% include figure.html img="/img/2015-11-01-findpeaks-in-python/peakutils_indexes.png" caption="The PeakUtils indexes function is easy to use and allows to filter on an height threshold and on a minimum distance between peaks." alt="Plot of results from PeakUtils indexes" %}

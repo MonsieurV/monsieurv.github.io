@@ -226,7 +226,10 @@ aside {
 /* Code Highlighting */
 pre,
 code {
-  white-space: pre;
+  white-space: pre-line;
+  overflow-wrap: break-word;
+  word-break: normal;
+  word-wrap: normal;
   display: inline-block;
   margin: 0;
   font: 14px/1.8em Menlo, Consolas, "Courier New", Courier, "Liberation Mono", monospace;
