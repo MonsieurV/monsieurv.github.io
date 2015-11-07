@@ -3,7 +3,8 @@ title: "Peak detection in the Python world"
 categories: [Digital signal processing]
 tags: [DSP, Python]
 brief: "An overview of the peak detection algorithms in Python."
-draft: true
+draft: false
+hacker_news: https://news.ycombinator.com/item?id=10519736
 ---
 
 As I was working on a signal processing project for [Equisense][], I've come to need an equivalent
