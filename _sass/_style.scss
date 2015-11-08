@@ -124,7 +124,8 @@ article {
   @include border-radius(10px);
   padding: 20px;
   margin: 0 10px;
-  border: 1px solid $red-yto;
+  border-bottom: 1px solid $red-yto;
+  border-top: 1px solid $red-yto;
 }
 
 @media (max-width: 480px) {
