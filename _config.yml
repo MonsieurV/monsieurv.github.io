@@ -9,8 +9,8 @@ google_analytics_id: UA-68404966-2
 
 repository: https://github.com/MonsieurV/monsieurv.github.io
 
-name: YtoTech Blog • Complex and distributed computing
-description: YtoTech blog about complex and distributed pieces of software.
+name: Simple, distributed software
+description: Blog written by YtoTech members about complex and distributed software made simple.
 url: http://blog.ytotech.com
 
 sass:
