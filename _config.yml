@@ -1,3 +1,5 @@
+gems:
+  - jekyll-feed
 exclude: [CNAME, Gemfile, Gemfile.lock, README.md, Makefile]
 timezone: Europe/Paris
 markdown: kramdown
@@ -12,6 +14,10 @@ repository: https://github.com/MonsieurV/monsieurv.github.io
 name: Simple, distributed software
 description: Blog written by YtoTech members about complex and distributed software made simple.
 url: http://blog.ytotech.com
+author:
+    name: Yoan Tournade
+    email: yoan@ytotech.com
+    uri: http://www.ytotech.com/people/
 
 sass:
     style: compressed
