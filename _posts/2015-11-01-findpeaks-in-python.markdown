@@ -56,9 +56,9 @@ As I was going to code a Python adaptation of the Octave-Force `findpeaks`, I fi
 The first is [the PeakUtils package][PeakUtils] by Lucas Hermann Negri which provides 1D peak detection utilities. Its [`indexes`][indexes] function allows you to detect peaks with minimum height and distance filtering.
 
 ```import numpy as np
-import peakutils.peak
+import peakutils
 cb = np.array([-0.010223, ... ])
-indexes = peakutils.peak.indexes(cb, thres=0.02/max(cb), min_dist=100)
+indexes = peakutils.indexes(cb, thres=0.02/max(cb), min_dist=100)
 ```
 
 {% include figure.html img="/img/2015-11-01-findpeaks-in-python/peakutils_indexes.png" caption="The PeakUtils indexes function is easy to use and allows to filter on an height threshold and on a minimum distance between peaks." alt="Plot of results from PeakUtils indexes" %}
@@ -75,6 +75,27 @@ indexes = detect_peaks(cb, mph=0.04, mpd=100)
 
 To avoid others the same roaming I've put on GitHub [an overview][overview_github] of these findings. Let me know if you got another open-source alternatives so we update the list.
 
+----------------------
+
+#### Edit 17th November
+
+As Marcos Duarte pointed out on [HN][hn_md_comment], the PeakUtils `indexes` function was actually inspired by his implementation of `detect_peaks`, explaining the similar results. Moreover he notes that the PeakUtils comes with other convenient utilities, such as `baseline` or `interpolate`.
+
+The [`interpolate` function][interpolate_ref] enhances the peak resolution by fitting Gaussians or computing centroids. Taking the previous example, here how you get it work:
+
+```import numpy as np
+import peakutils
+cb = np.array([-0.010223, ... ])
+indexes = peakutils.indexes(cb, thres=0.02/max(cb), min_dist=100)
+# [ 333  693 1234 1600]
+interpolatedIndexes = peakutils.interpolate(range(0, len(cb)), cb, ind=indexes)
+# [  332.61234263   694.94831376  1231.92840845  1600.52446335]
+```
+
+{% include figure.html img="/img/2015-11-01-findpeaks-in-python/peakutils_interpolate.png" caption="Near to be insensible in our case, the PeakUtils interpolate function allows a higher peak resolution." alt="Plot of results from PeakUtils interpolate" url="/img/2015-11-01-findpeaks-in-python/peakutils_interpolate.png" %}
+
+This time before the peak resolution, the [`baseline` function][baseline_ref] will be very handy in presence of drifting signals or to deal with unwanted low-frequency phenomenon: it kind of [high-pass filter][highpass_filter] the signal. The PeakUtils documentation have a [good example][baseline_example] of its use.
+
 [Equisense]: http://www.equisense.com
 [findpeaks_ref]: http://fr.mathworks.com/help/signal/ref/findpeaks.html
 [find_peaks_cwt_ref]: http://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.find_peaks_cwt.html
@@ -86,3 +107,8 @@ To avoid others the same roaming I've put on GitHub [an overview][overview_githu
 [PeakUtils]: https://bitbucket.org/lucashnegri/peakutils
 [indexes]: http://pythonhosted.org/PeakUtils/reference.html#peakutils.peak.indexes
 [jupyter notebook]: http://nbviewer.ipython.org/github/demotu/BMC/blob/master/notebooks/DetectPeaks.ipynb
+[hn_md_comment]: https://news.ycombinator.com/item?id=10524933
+[interpolate_ref]: http://pythonhosted.org/PeakUtils/reference.html#peakutils.peak.interpolate
+[baseline_ref]: http://pythonhosted.org/PeakUtils/reference.html#peakutils.baseline.baseline
+[baseline_example]: http://pythonhosted.org/PeakUtils/tutorial_a.html#estimating-and-removing-the-baseline
+[highpass_filter]: http://www.nws.noaa.gov/os/csd/pds/PCU2/statistics/Stats/part2/Filter_HP.htm

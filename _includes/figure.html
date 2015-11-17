@@ -1,8 +1,8 @@
 <figure>
   {% if include.url %}
-  <a href="{{ include.linkUrl }}" title"{{ include.linkTitle }}" target="_blank">
+  <a href="{{ include.url }}" {% if include.linkTitle %}title="{{ include.linkTitle }}"{% endif %}>
   {% endif %}
-    <img src="{{ include.img }}" alt="{{ include.alt }}">
+  <img src="{{ include.img }}" alt="{{ include.alt }}">
   {% if include.url %}
   </a>
   {% endif %}
