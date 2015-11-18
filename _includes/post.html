@@ -3,9 +3,10 @@
     <span class="post-date">
       {{ post.date | date_to_string }}
     </span>
-    <a href="https://github.com/{{ post.author }}" class="post-author">
-      <img src="https://github.com/{{ post.author }}.png" class="avatar" alt="{{ post.author }} avatar" width="24" height="24">
-      {{ post.author }}
+    {% assign author = site.data.authors.yoan %}
+    <a href="{{ author.uri }}" class="post-author">
+      <img src="{{ author.image }}" class="avatar" alt="{{ author.name }} avatar" width="24" height="24">
+      {{ author.name }}
     </a>
     <span class="post-category">
       <span class="label">

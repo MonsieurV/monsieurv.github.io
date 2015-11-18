@@ -1,4 +1,6 @@
 ---
+layout: post
+author: yoan
 title: "Peak detection in the Python world"
 categories: [Digital signal processing]
 tags: [DSP, Python]

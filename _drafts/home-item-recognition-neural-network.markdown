@@ -1,7 +1,10 @@
 ---
+layout: post
+author: yoan
 title: "Home item recognition using neural networks"
 categories: [Neural networks]
 tags: [Neural networks, Machine learning]
+brief: "Computer, is that a chair or a carpet?"
 draft: true
 ---
 

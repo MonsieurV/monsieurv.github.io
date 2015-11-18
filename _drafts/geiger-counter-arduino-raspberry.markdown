@@ -1,7 +1,10 @@
 ---
+layout: post
+author: yoan
 title: "Geiger counter for your house"
 categories: [Embedded systems]
 tags: [Embedded systems, data logging]
+brief: "Play with the Radiation Watch and measure gamma radiation."
 draft: true
 ---
 

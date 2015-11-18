@@ -1,3 +1,7 @@
 yoan:
-  name: "Yoan Tournade"
-  bio: "Hacker, rider and entrepreneur."
+    name: Yoan Tournade
+    bio: Hacker, rider and entrepreneur.
+    github: MonsieurV
+    email: yoan@ytotech.com
+    uri: https://github.com/MonsieurV
+    image: https://github.com/monsieurv.png
