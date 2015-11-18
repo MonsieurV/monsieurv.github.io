@@ -3,7 +3,7 @@
     <span class="post-date">
       {{ post.date | date_to_string }}
     </span>
-    {% assign author = site.data.authors.yoan %}
+    {% assign author = site.data.authors[page.author] %}
     <a href="{{ author.uri }}" class="post-author">
       <img src="{{ author.image }}" class="avatar" alt="{{ author.name }} avatar" width="24" height="24">
       {{ author.name }}
