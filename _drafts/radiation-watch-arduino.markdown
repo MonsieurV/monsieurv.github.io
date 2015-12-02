@@ -4,8 +4,9 @@ author: yoan
 title: "A Geiger counter for your house - Part 1"
 categories: [Embedded systems]
 tags: [Embedded systems, data logging, Arduino, Geiger counter]
-brief: "Play with the Radiation Watch Pocket Geiger and monitor the gamma ray in your house."
+brief: "Play with an Arduino and the Radiation Watch Pocket Geiger to monitor radiation."
 draft: true
+lovehatefeedback: true
 ---
 
 Some month ago a [client of mime][effi_synchrone] have offered me a Geiger counter kit from [the Radiation Watch project][]. The last few weeks I was able to take the the time to play with.
@@ -34,23 +35,17 @@ SD card data logging.
 
 All is good, and for one purpose: measure the background radiation level. We'll see here what it can gives you.
 
-{% include figure.html img="/assets/2015-12-04-radiation-watch-arduino/colombes_2015_12_01_radiation.svg" caption="The PeakUtils indexes function is easy to use and allows to filter on an height threshold and on a minimum distance between peaks." alt="Plot of results from PeakUtils indexes" %}
+{% include figure.html img="/assets/2015-12-04-radiation-watch-arduino/colombes_2015_12_01_radiation.svg" url="https://plot.ly/~tournadey/15/colombes-1st-december-2015-gamma-radiation/" alt="Plot of the radiation level at Colombes the 1st December 2015" linkTitle="Click to see the data on Plotly" %}
 
 Histogram. Standard deviation.
 
 Surprinsgly I was able to take measurements being in a train. I expected the vibration to fuck up, but it wasn't the case. The accelerometer wasn't triggering the noise detection pin and the data seems plausible.
 
-Plot on the train from (1h avant Bordeaux ?) to Agen
+{% include figure.html img="/assets/2015-12-04-radiation-watch-arduino/bordeaux_agen_train_2015_12_02_radiation.svg" url="https://plot.ly/~tournadey/30/bordeaux-to-agen-on-train-2nd-december-2015-gamma-radiation/" alt="Plot of the radiation level on the train from Bordeaux to Agen the 2nd December 2015" linkTitle="Click to see the data on Plotly" %}
 
 Finally Go to Golfech and make some background measurements for 2 hours.
 
 Since this device seems good for background monitoring, I'll connect it to my Raspberry Pi and plot the data online in real-time. Stay tuned.
-
-Another project followed the Fukushima crisis: the bGeigie by Safecast provides a complete and full-pledged radiation sensor. Compared to the Radiation Watch Pocket geiger, [it is not cheap][safecast_bgeigie_nano], but way more complete. Mobile radiation measurement. It comes as a kit to build and allows to monitor all Alpha, Beta and Gamma radiations. It can be considered as a whole system: provides an API. Map. Community.
-
-Rpi: Connect this to the Safecast API for stationary measurements. TODO Send message to Safecast
-
-RPi: propose a built-case for 200 €. Monitore (to Safecast? to a backend of mime? to a custom endpoint?) as soon as you connect it to internet (Ethernet with DHCP).
 
 http://www.playspoon.com/wiki/index.php/GeigerCounter
 http://www.radiation-watch.co.uk/aboutus

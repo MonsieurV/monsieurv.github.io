@@ -4,7 +4,7 @@ author: yoan
 title: "A Geiger counter for your house - Part 2"
 categories: [Embedded systems]
 tags: [Embedded systems, data logging, Raspberry Pi, Geiger counter]
-brief: "Play with the Radiation Watch Pocket Geiger and monitor the gamma ray in your house."
+brief: "Keep an eye on those sneaky gamma rays using your Raspberry Pi."
 draft: true
 ---
 
