@@ -8,16 +8,30 @@ brief: "Play with the Radiation Watch Pocket Geiger and monitor the gamma ray in
 draft: true
 ---
 
-A [client of mime][effi_synchrone] have offered me a Geiger counter kit to play with.
+A [client of mime][effi_synchrone] have offered me a Geiger counter kit to play with some months ago.
 
 Radiation Watch is a scientific and citizen initiative born after the Fukushima Daiishi disaster. The project have been founded [on Kickstarter][rw_ks] TODO date. It aims to provide a cheap and accessible radiation sensor for monitoring Gamma rays.
 
+Picture of Pocket Geiger connected to the Arduino
+
 http://thegovlab.org/wiki/Radiation-Watch.org
-{% include figure.html img="/img/2015-11-01-findpeaks-in-python/peakutils_indexes.png" caption="The PeakUtils indexes function is easy to use and allows to filter on an height threshold and on a minimum distance between peaks." alt="Plot of results from PeakUtils indexes" %}
+
 
 Another project followed the Fukushima crisis: the bGeigie by Safecast provides a complete and full-pledged radiation sensor. Compared to the Radiation Watch Pocket geiger, [it is not cheap][safecast_bgeigie_nano], but way more complete. Mobile radiation measurement. It comes as a kit to build and allows to monitor all Alpha, Beta and Gamma radiations. It can be considered as a whole system: provides an API. Map. Community.
 
-Provide a better firmware. Connect this to the Safecast API for stationary measurements. TODO Send message to Safecast
+Provide a better firmware. IRQ, cleaned code, clearer interface and reduced memory footprint.
+
+{% include figure.html img="/assets/2015-12-04-radiation-watch-arduino/colombes_2015_12_01_radiation.svg" caption="The PeakUtils indexes function is easy to use and allows to filter on an height threshold and on a minimum distance between peaks." alt="Plot of results from PeakUtils indexes" %}
+
+Histogram. Standard deviation.
+
+Go to Golfech and make some background measurements for 2 hours.
+
+Since this device seems good for background monitoring, I'll connect it to my Raspberry Pi and plot the data online in real-time. Stay tuned.
+
+Rpi: Connect this to the Safecast API for stationary measurements. TODO Send message to Safecast
+
+RPi: propose a built-case for 200 €. Monitore (to Safecast? to a backend of mime? to a custom endpoint?) as soon as you connect it to internet (Ethernet with DHCP).
 
 http://www.playspoon.com/wiki/index.php/GeigerCounter
 http://www.radiation-watch.co.uk/aboutus
