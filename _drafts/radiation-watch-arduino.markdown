@@ -9,21 +9,25 @@ draft: true
 lovehatefeedback: true
 ---
 
-Some month ago a [client of mime][effi_synchrone] have offered me a Geiger counter kit from [the Radiation Watch project][]. The last few weeks I was able to take the the time to play with.
+Some month ago a [client of mime][effi_synchrone] offered me a Geiger counter kit from [the Radiation Watch project][]. The last few weeks I was able to take the the time to play with.
 
-Radiation Watch is a scientific and citizen initiative born after the Fukushima Daiishi disaster. The project have been founded [on Kickstarter][rw_ks] by N people TODO date. It aims to provide a cheap and accessible radiation sensor for monitoring gamma radiation.
+{% include figure.html img="/assets/2015-12-04-radiation-watch-arduino/pocket_geiger.png" alt="Pocket Geiger illustration" %}
 
-In the case you don't remember well - or never knew - here how we usually classify radiations: we distinguish between Alpha, Beta and Gamma rays. What is especially remarkable is that the three have longueur d'onde croissante, which induce their capacity to traverse the universe. Ainsi a simple sheet of paper or layer of clooth suffice to block alpha radiations; as for beta rays you'll need to stay behind ?? to be protected from a source. Finally the gamma rays are only stopped by ???: they're the one to which we are naturally exposed. If you don't play with direct sources like [Marie Curie][] or don't [go around][] in a highly contaminated site you won't be exposed to significant level of alpha or beta rays.
+Radiation Watch is a scientific and citizen initiative born after the Fukushima Daiishi disaster. The project have been founded [on Kickstarter][rw_ks] by N people TODO date. It aims to provide a cheap and accessible radiation sensor for monitoring gamma radiation, that [anyone can use][rw_userreports].
 
-Rayonnement alpha & beta: exposition naturelle ? Soleil ?
+In the case you don't remember well - or never knew - here how we usually classify radiations: we distinguish between Alpha, Beta and Gamma rays. What is especially remarkable is that the three have longueur d'onde croissante, which induce their capacity to traverse the universe. Ainsi a simple sheet of paper or layer of clooth suffice to block alpha radiations; as for beta rays you'll need to stay behind ?? to be protected from a source. Finally the gamma rays are only stopped by ???: they're the one to which we are naturally exposed. So if you don't play with direct sources like [Marie Curie][] and don't [go around][] in a highly contaminated site you won't be exposed to significant level of alpha or beta rays. (how that's true? injestion of contaminated foods?)
 
-Schema of radiation, longueur d'onde, and isolation.
+{% include figure.html img="/assets/2015-12-04-radiation-watch-arduino/radiation_penetration.svg" url="https://en.wikipedia.org/wiki/Radiation" alt="Alpha, beta and gamma radiation penetration" caption="The ability to penetrate matter and ionize cells depends on the type of radiation (image from Wikipedia)." %}
 
 Relation between radioactivity and radiation dose. The Sievert unit.
 
+http://www.mouser.com/ds/2/313/X100-7_SMD_501401-586455.pdf
+
+PocketGeiger has X100-7 PIN Photodiode for gamma-ray detection, having large scale, effective sectional area (100mm^2), manufactured by FirstSensor corporation which has also supplied similar sensor for NASA's X-ray telescope. Generally, the efficiency of PIN photodiode sensor is extremely stable and has no age-related degradation, compared with GMT (Geiger–Müller tube) or scintillator crystal.
+
 Ok, I really don't know much about radioactivity so now better // let's begin to speak code.
 
-Picture of Pocket Geiger connected to the Arduino
+{% include figure.html img="/assets/2015-12-04-radiation-watch-arduino/setup_photo.jpg" url="/assets/2015-12-04-radiation-watch-arduino/setup_photo.jpg" alt="Pocket Geiger connected to the Arduino" caption="Assembling the thing is not a big deal: weld four wires on the Pocket Geiger card and connect them to your Arduino." %}
 
 http://thegovlab.org/wiki/Radiation-Watch.org
 
@@ -52,5 +56,6 @@ http://www.radiation-watch.co.uk/aboutus
 http://www.radiation-watch.co.uk/faqs
 
 [effi_synchrone]: http://www.effi-synchrone.com
+[rw_userreports]: http://www.radiation-watch.org/p/usersreports.html
 [rw_ks]: https://www.kickstarter.com/projects/1517658569/smart-radiation-detector/description
 [safecast_bgeigie_nano]: http://shop.kithub.cc/products/safecast-bgeigie-nano?variant=10879588932
