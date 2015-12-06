@@ -54,6 +54,8 @@ TODO Histogram // Standard deviation on results?
 
 TODO Golfech measurements, local nuclear power plant
 
+{% include figure.html img="/assets/2015-12-06-radiation-watch-arduino/golfech_north_plant_2015_12_06.svg" url="https://plot.ly/~tournadey/76/golfech-1-km-north-of-the-power-plant-6th-december-2015/" alt="Plot of the radiation level under 1 Km of the Golfech nuclear power plant the 6th December 2015. Nothing special here." linkTitle="Click to see the data on Plotly" %}
+
 Since this device seems good for background monitoring, I'll connect it to my Raspberry Pi to plot the data online in real-time. Stay tuned.
 
 [effi_synchrone]: http://www.effi-synchrone.com
