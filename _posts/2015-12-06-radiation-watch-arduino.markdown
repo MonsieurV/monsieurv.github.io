@@ -11,7 +11,7 @@ lovehatefeedback: true
 
 Some month ago a [client of mime][effi_synchrone] offered me a Geiger counter kit from [the Radiation Watch project][rw]. The last few weeks I was able to play with it.
 
-{% include figure.html img="/assets/2015-12-06-radiation-watch-arduino/pocket_geiger.png" alt="Pocket Geiger illustration" caption="In the little white box resides the Pocket Geiger board, with its photodiode sensor." %}
+{% include figure.html img="/assets/2015-12-06-radiation-watch-arduino/pocket_geiger.png" alt="Pocket Geiger illustration" caption="In the white little box resides the Pocket Geiger board, with its photodiode sensor." %}
 
 Radiation Watch is a scientific and citizen initiative born after the Fukushima Daiishi disaster and which has been funded through [Kickstarter][rw_ks] in July 2011. It aims to provide a cheap radiation detector that [anyone can use][rw_userreports], even [boars][rw_boars].
 
