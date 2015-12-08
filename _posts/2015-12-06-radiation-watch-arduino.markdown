@@ -39,15 +39,17 @@ Finally all this is good, but for one purpose: measuring the background radiatio
 
 I've first done background radiation measurement at the first floor of a house in Colombes, near Paris:
 
-{% include figure.html img="/assets/2015-12-06-radiation-watch-arduino/colombes_2015_12_01_radiation.svg" url="https://plot.ly/~tournadey/15/colombes-1st-december-2015-gamma-radiation/" alt="Plot of the radiation level at Colombes the 1st December 2015" linkTitle="Click to see the data on Plotly" %}
+{% include figure.html img="/assets/2015-12-06-radiation-watch-arduino/colombes_2015_12_01_radiation.svg" url="https://plot.ly/~tournadey/96/colombes-1st-december-2015/" alt="Plot of the radiation level at Colombes the 1st December 2015" linkTitle="Click to see the data on Plotly" %}
 
 Surprisingly I was able to measure radiation being in a moving train. I expected the vibrations to skew entirely the results, but it wasn't the case. The accelerometer wasn't triggering the noise detection pin and the measured values are sensible ones:
 
-{% include figure.html img="/assets/2015-12-06-radiation-watch-arduino/bordeaux_agen_train_2015_12_02_radiation.svg" url="https://plot.ly/~tournadey/30/bordeaux-to-agen-on-train-2nd-december-2015-gamma-radiation/" alt="Plot of the radiation level on the train from Bordeaux to Agen the 2nd December 2015" linkTitle="Click to see the data on Plotly" %}
+{% include figure.html img="/assets/2015-12-06-radiation-watch-arduino/bordeaux_agen_train_2015_12_02_radiation.svg" url="https://plot.ly/~tournadey/91/bordeaux-to-agen-on-train-2nd-december-2015/" alt="Plot of the radiation level on the train from Bordeaux to Agen the 2nd December 2015" linkTitle="Click to see the data on Plotly" %}
 
 In my family house, somewhere in the south-west countryside, we're a little more exposed, but still way not enough to turn Hulk.
 
-Since I don't have any radioactive source (for the happy folks living in USA, you can freely buy and possess [little ones][imagesco_sources]) nor the time to go in the volcanic parts of France, I've gone to my local nuclear power plant, as a last attempt to measure something interesting. But outside an undamaged [containment building][containment_building] and at view-distance from the plant, that's not very exciting.
+{% include figure.html img="/assets/2015-12-06-radiation-watch-arduino/laussou_2015_12_06.svg" url="https://plot.ly/~tournadey/105/laussou-6th-december-2015/" alt="Plot of the radiation level in Laussou the 6th December 2015" linkTitle="Click to see the data on Plotly" %}
+
+Since I don't have any radioactive source (for the happy folks living in USA, you can freely buy and possess [little ones][imagesco_sources]) nor the time to go in the volcanic parts of France, I've gone to my local nuclear power plant, as a last attempt to measure something interesting. But outside an undamaged [containment building][containment_building] and at a view-distance from the plant, that's not very exciting.
 
 {% include figure.html img="/assets/2015-12-06-radiation-watch-arduino/golfech_north_plant_2015_12_06.svg" url="https://plot.ly/~tournadey/76/golfech-1-km-north-of-the-power-plant-6th-december-2015/" alt="Plot of the radiation level under 1 Km of the Golfech nuclear power plant the 6th December 2015." linkTitle="Click to see the data on Plotly" caption="Nothing special here." %}
 
