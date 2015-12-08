@@ -23,10 +23,9 @@ Alpha and beta radiation can be stopped by an aluminum foil: if you don't [play 
 
 {% include figure.html img="/assets/2015-12-06-radiation-watch-arduino/radiation_penetration.svg" url="https://en.wikipedia.org/wiki/Radiation" alt="Alpha, beta and gamma radiation penetration" caption="The ability to penetrate matter and ionize cells depends on the radiation type (image from Wikipedia)." %}
 
-When you consider [background radiation][bg_rad] monitoring, detecting only gamma rays gives you a sensible indication of your exposition to radiation, from both natural and artificial sources. If it will fail to inform you of the contamination of your food or water, it will help you notice  TODO.
+When you consider [background radiation][bg_rad] monitoring, detecting only gamma rays gives you a sensible indication of your exposition to radiation, from both natural and artificial sources. If it will fail to detect the contamination of your food or water, it will help you determine the environment radiation level and its changes over time. Cosmic rays are chasing [your computer][cosmic_ray_electronics]? Doubtful steam [comes out][tmii] of the house of your maybe-too-genius neighbor? You'll have a change to really know.
 
-TODO Rapid introduction of the human radiation dose. The Sievert unit.
-https://upload.wikimedia.org/wikipedia/commons/2/20/Radiation_Dose_Chart_by_Xkcd.png
+Speaking of ionizing radiation and its effect on human body, we use the sievert unit to quantify a dose. One sievert is bad enough to significantly increases chances of cancer (see this great [dose chart][dose_chart]). Since we don't usually absorb high-level dose in a [one shot manner][al_poisoning], we associates the unit with a time dimension when we do background measurements: e.g. uSv/h, for the amount of ionizing radiation you will received staying at a place for one hour.
 
 Ok, enough radioactivity blabla, place to electronic and code. The Pocket Geiger board comes with four pins: two are for the usual alimentation stuff (`+V`, `GND`) and the two others for the signals (`SIG`, `NS`). When the sensor is hit by a radiation, it will simply pull the radiation pin (`SIG`) to an high voltage level for some microseconds. But as the photodiode sensor is sensible to vibrations, Radiation Watch also included an accelerometer so we can get notice of them through the noise pin (`NS`) and dismiss the corresponding false-positives.
 
@@ -38,8 +37,6 @@ The library is available [on GitHub][apg_lib] and released under the MIT license
 
 Finally all this is good, but for one purpose: measuring the background radiation level. Let's see what kind of data we can get from it.
 
-TODO No instant results: need at least 2 min to stabilize
-
 I've first done background radiation measurement at the first floor of a house in Colombes, near Paris:
 
 {% include figure.html img="/assets/2015-12-06-radiation-watch-arduino/colombes_2015_12_01_radiation.svg" url="https://plot.ly/~tournadey/15/colombes-1st-december-2015-gamma-radiation/" alt="Plot of the radiation level at Colombes the 1st December 2015" linkTitle="Click to see the data on Plotly" %}
@@ -48,15 +45,15 @@ Surprisingly I was able to measure radiation being in a moving train. I expected
 
 {% include figure.html img="/assets/2015-12-06-radiation-watch-arduino/bordeaux_agen_train_2015_12_02_radiation.svg" url="https://plot.ly/~tournadey/30/bordeaux-to-agen-on-train-2nd-december-2015-gamma-radiation/" alt="Plot of the radiation level on the train from Bordeaux to Agen the 2nd December 2015" linkTitle="Click to see the data on Plotly" %}
 
-TODO Results in my family house in the France South-West countryside.
+In my family house, somewhere in the south-west countryside, we're a little more exposed, but still way not enough to turn Hulk.
 
-TODO Histogram // Standard deviation on results?
+Since I don't have any radioactive source (for the happy folks living in USA, you can freely buy and possess [little ones][imagesco_sources]) nor the time to go in the volcanic parts of France, I've gone to my local nuclear power plant, as a last attempt to measure something interesting. But outside an undamaged [containment building][containment_building] and at view-distance from the plant, that's not very exciting.
 
-TODO Golfech measurements, local nuclear power plant
+{% include figure.html img="/assets/2015-12-06-radiation-watch-arduino/golfech_north_plant_2015_12_06.svg" url="https://plot.ly/~tournadey/76/golfech-1-km-north-of-the-power-plant-6th-december-2015/" alt="Plot of the radiation level under 1 Km of the Golfech nuclear power plant the 6th December 2015." linkTitle="Click to see the data on Plotly" caption="Nothing special here." %}
 
-{% include figure.html img="/assets/2015-12-06-radiation-watch-arduino/golfech_north_plant_2015_12_06.svg" url="https://plot.ly/~tournadey/76/golfech-1-km-north-of-the-power-plant-6th-december-2015/" alt="Plot of the radiation level under 1 Km of the Golfech nuclear power plant the 6th December 2015. Nothing special here." linkTitle="Click to see the data on Plotly" %}
+You have maybe noticed the Pocket Geiger is not accurate enough to give instant results: it need at least two minutes to reduce the error incertitude and stabilize the readings. You can spot this on the graphs: the first results are highly dispersed, with a great incertitude range.
 
-Since this device seems good for background monitoring, I'll connect it to my Raspberry Pi to plot the data online in real-time. Stay tuned.
+Since this device seems good for background monitoring, I'll connect it to my Raspberry Pi so we can plot the data online in real-time. Stay tuned.
 
 [effi_synchrone]: http://www.effi-synchrone.com
 [rw]: http://www.radiation-watch.org/
@@ -78,3 +75,9 @@ Since this device seems good for background monitoring, I'll connect it to my Ra
 [rw_uk_faqs]: http://www.radiation-watch.co.uk/faqs
 [python_script]: https://github.com/MonsieurV/ArduinoPocketGeiger#plot-in-real-time-with-python
 [sd_sketch]: https://github.com/MonsieurV/ArduinoPocketGeiger/blob/master/examples/SdCardCsvLogger/SdCardCsvLogger.ino
+[cosmic_ray_electronics]: https://en.wikipedia.org/wiki/Cosmic_ray#Effect_on_electronics
+[tmii]: https://en.wikipedia.org/wiki/Three_Mile_Island_accident
+[al_poisoning]: https://en.wikipedia.org/wiki/Poisoning_of_Alexander_Litvinenko
+[dose_chart]: https://upload.wikimedia.org/wikipedia/commons/2/20/Radiation_Dose_Chart_by_Xkcd.png
+[imagesco_sources]: http://www.imagesco.com/geiger/radioactive-sources.html
+[containment_building]: https://en.wikipedia.org/wiki/Containment_building
