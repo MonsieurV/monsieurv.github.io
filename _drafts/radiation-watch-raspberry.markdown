@@ -18,6 +18,11 @@ Rpi: Connect this to the Safecast API for stationary measurements. TODO Send mes
 
 RPi: propose a built-case for 200 €. Monitore (to Safecast? to a backend of mime? to a custom endpoint?) as soon as you connect it to internet (Ethernet with DHCP).
 
+https://kithub.cc/safecast/
+First:
+https://www.kickstarter.com/projects/1038658656/rdtnorg-radiation-detection-hardware-network-in-ja/description
+Then:
+https://www.kickstarter.com/projects/seanbonner/safecast-x-kickstarter-geiger-counter/description
 
 http://safecast.org/tilemap/?y=46.9&x=2.77&z=7
 https://books.google.fr/books?id=2WCAAAAAQBAJ&pg=PA114&lpg=PA114&dq=radiation+watch+kickstarter&source=bl&ots=ysQnoMqI83&sig=ZRcUa9MnRsWlr69-_17mEvOISik&hl=fr&sa=X&ved=0ahUKEwiTp7XkibHJAhWBvxoKHaZNAssQ6AEIRzAE#v=onepage&q=radiation%20watch%20kickstarter&f=false

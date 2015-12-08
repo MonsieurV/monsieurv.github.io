@@ -15,7 +15,7 @@ Some month ago a [client of mime][effi_synchrone] offered me a Geiger counter ki
 
 Radiation Watch is a scientific and citizen initiative born after the Fukushima Daiishi disaster and which has been funded through [Kickstarter][rw_ks] in July 2011. It aims to provide a cheap radiation detector that [anyone can use][rw_userreports], even [boars][rw_boars].
 
-Initially conceived to be connected to an iPhone, Radation Watch now provides an embedded version of the PocketGeiger. Whatever version is used, the board includes a [X100-7 PIN photodiode][X100_datasheet] from FirstSensor for [gamma-ray detection][rw_uk_faqs].
+Initially conceived to be connected to an iPhone, Radation Watch now provides an embedded version of the Pocket Geiger. Whatever version is used, the board includes a [X100-7 PIN photodiode][X100_datasheet] from FirstSensor for [gamma-ray detection][rw_uk_faqs]. It is thus not a proper [Geiger-Müller][gm_tube] counter.
 
 In you don't remember well we usually classify radiations under three hats: alpha, beta and gamma rays. Alpha and beta radiation are charged particles, whereas gamma rays are photons of electromagnetic energy, with no charge and mass. They are all three considered ionizing radiation - which means they can [alter][alter_matter] the matter they go through -, but have very different penetrating and ionizing abilities due to their respective mass, size and nature.
 
@@ -87,3 +87,4 @@ Since this device seems good for background monitoring, I'll connect it to my Ra
 [dose_chart]: https://upload.wikimedia.org/wikipedia/commons/2/20/Radiation_Dose_Chart_by_Xkcd.png
 [imagesco_sources]: http://www.imagesco.com/geiger/radioactive-sources.html
 [containment_building]: https://en.wikipedia.org/wiki/Containment_building
+[gm_tube]: https://en.wikipedia.org/wiki/Geiger%E2%80%93M%C3%BCller_tube
