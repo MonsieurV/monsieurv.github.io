@@ -5,7 +5,7 @@ title: "A Geiger counter for your house - Part 1"
 categories: [Embedded systems]
 tags: [Embedded systems, data logging, Arduino, Geiger counter]
 brief: "Play with an Arduino and the Radiation Watch Pocket Geiger to monitor radiation."
-draft: true
+draft: false
 lovehatefeedback: true
 ---
 
@@ -56,6 +56,10 @@ Since I don't have any radioactive source (for the happy folks living in USA, yo
 You have maybe noticed the Pocket Geiger is not accurate enough to give instant results: it need at least two minutes to reduce the error incertitude and stabilize the readings. You can spot this on the graphs: the first results are highly dispersed, with a great incertitude range.
 
 Since this device seems good for background monitoring, I'll connect it to my Raspberry Pi so we can plot the data online in real-time. Stay tuned.
+
+<br>
+
+Thanks to Nicolas for reading drafts of this.
 
 [effi_synchrone]: http://www.effi-synchrone.com
 [rw]: http://www.radiation-watch.org/
