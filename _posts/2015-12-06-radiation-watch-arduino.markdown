@@ -7,6 +7,7 @@ tags: [Embedded systems, data logging, Arduino, Geiger counter]
 brief: "Play with an Arduino and the Radiation Watch Pocket Geiger to monitor radiation."
 draft: false
 lovehatefeedback: true
+hacker_news: https://news.ycombinator.com/item?id=10702855
 ---
 
 Some month ago a [client of mime][effi_synchrone] offered me a Geiger counter kit from [the Radiation Watch project][rw]. The last few weeks I was able to play with it.
