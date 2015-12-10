@@ -71,7 +71,7 @@ Since this device seems good for background monitoring, I'll connect it to my Ra
 
 <br>
 
-**Thanks** to Nicolas for reading drafts of this.
+**Thanks** to Nicolas for reading drafts of this, and to Thomas W. for having managed the license issue. 
 
 [effi_synchrone]: http://www.effi-synchrone.com
 [rw]: http://www.radiation-watch.org/
