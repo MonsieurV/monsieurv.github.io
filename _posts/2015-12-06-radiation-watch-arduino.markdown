@@ -36,6 +36,17 @@ When your Pocket Geiger is wired, you'll need an Arduino firmware to do somethin
 
 The library is available [on GitHub][apg_lib] and released under the MIT license. It comes with a handy [Python script][python_script] to plot the radiation dose in real-time from your serial port, or with a [sample sketch][sd_sketch] for logging data on an SD card thanks to the Ethernet shield.
 
+To use it, you need to create a `Radiation Watch` object with the pin and matching IRQ numbers to which are connected your Pocket Geiger:
+
+```RadiationWatch radiationWatch(signPin, noisePin, signIrq, noiseIrq);
+```
+
+This object must be initialized at the Arduino setup phase with `RadiationWatch::setup()`. In your program main loop you also need to run the `RadiationWatch::loop()` frequently in order to compute the statistics.
+
+Then you can get the radiation level whenever you need using `RadiationWatch::uSvh()`, with the current incertitude specified by `RadiationWatch::uSvhError()`. You can also register callbacks that will be called in case of radiation or vibration occurrence, with respectively `RadiationWatch::registerRadiationCallback()` and `RadiationWatch::registerNoiseCallback()`.
+
+Complete examples can be found [here][apg_geiger_samples].
+
 Finally all this is good, but for one purpose: measuring the background radiation level. Let's see what kind of data we can get from it.
 
 I've first done background radiation measurement at the first floor of a house in Colombes, near Paris:
@@ -89,3 +100,4 @@ Since this device seems good for background monitoring, I'll connect it to my Ra
 [imagesco_sources]: http://www.imagesco.com/geiger/radioactive-sources.html
 [containment_building]: https://en.wikipedia.org/wiki/Containment_building
 [gm_tube]: https://en.wikipedia.org/wiki/Geiger%E2%80%93M%C3%BCller_tube
+[apg_geiger_samples]: https://github.com/MonsieurV/ArduinoPocketGeiger/tree/master/examples
