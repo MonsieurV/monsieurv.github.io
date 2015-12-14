@@ -8,6 +8,8 @@ brief: "Keep an eye on those sneaky gamma rays using your Raspberry Pi."
 draft: true
 ---
 
+https://github.com/MonsieurV/PiPocketGeiger
+
 Follow-up of my article about the Pocket Geiger. So far we were data logging the radiation level offline. I was promising a counter for your house: we need to do better.
 
 Since this device seems good for background monitoring, I'll connect it to my Raspberry Pi and plot the data online in real-time. Stay tuned.

@@ -32,7 +32,7 @@ Ok, enough radioactivity blabla, place to electronic and code. The Pocket Geiger
 
 {% include figure.html img="/assets/2015-12-06-radiation-watch-arduino/setup_photo.jpg" url="/assets/2015-12-06-radiation-watch-arduino/setup_photo.jpg" alt="Pocket Geiger connected to the Arduino" caption="Assembling the whole is not a big deal: weld four wires on the Pocket Geiger card and connect them to your Arduino. Done!" %}
 
-When your Pocket Geiger is wired, you'll need an Arduino firmware to do something with it. Radiation Watch provides [sample code][rw_sample_code] to log measurements through the Arduino serial port. To ease integration with other software Thomas W. has released [a library][thomasaw_lib]. I've followed the [Toumal work][toumal_lib] to make things even better and provides a library with cleaned code, reduced memory footprint and documented examples, so you can start rapidly hacking your things.
+When your Pocket Geiger is wired, you'll need an Arduino firmware to do something with it. Radiation Watch provides [sample code][rw_sample_code] to log measurements through the Arduino serial port. To ease integration with other software Thomas Weisbach has released [a library][thomasaw_lib]. I've followed the [Toumal work][toumal_lib] to make things even better and provides a library with cleaned code, reduced memory footprint and documented examples, so you can start rapidly hacking your things.
 
 The library is available [on GitHub][apg_lib] and released under the MIT license. It comes with a handy [Python script][python_script] to plot the radiation dose in real-time from your serial port, or with a [sample sketch][sd_sketch] for logging data on an SD card thanks to the Ethernet shield.
 
@@ -71,7 +71,7 @@ Since this device seems good for background monitoring, I'll connect it to my Ra
 
 <br>
 
-**Thanks** to Nicolas for reading drafts of this, and to Thomas W. for having managed the license issue. 
+**Thanks** to Nicolas C. for reading drafts of this, to Thomas Weisbach for having managed the license issue and to Nicolas Michaux for giving me the idea.
 
 [effi_synchrone]: http://www.effi-synchrone.com
 [rw]: http://www.radiation-watch.org/
