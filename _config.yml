@@ -3,7 +3,7 @@ gems:
 exclude: [CNAME, Gemfile, Gemfile.lock, README.md, Makefile]
 timezone: Europe/Paris
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 permalink: /:year/:month/:day/:title/
 google_analytics_id: UA-68404966-2
 repository: https://github.com/MonsieurV/monsieurv.github.io
