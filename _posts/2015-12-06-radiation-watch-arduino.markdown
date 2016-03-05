@@ -3,10 +3,10 @@ layout: post
 author: yoan
 title: "A Geiger counter for your house - Part 1"
 categories: [Embedded systems]
-tags: [Embedded systems, data logging, Arduino, Geiger counter]
+tags: [Embedded systems, data logging, Arduino, Geiger counter, radiation]
 brief: "Play with an Arduino and the Radiation Watch Pocket Geiger to monitor radiation."
 draft: false
-lovehatefeedback: true
+lovehatefeedback: false
 hacker_news: https://news.ycombinator.com/item?id=10702855
 ---
 
