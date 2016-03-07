@@ -23,7 +23,7 @@ The global picture is good, however we need a way to communicate and get the rea
 
 The PiPocketGeiger library is built on top of the [RPi.GPIO] package. It uses edge signal interrupt to count the radiation and detect noisy condition.
 
-Linux is not a proper real-time OS (note: that remarq apply only for the standard Raspbian distribution, has it do exist patched versions of Linux for real-time applications: TODO), so we have no garanty we're effectively monitor the edge falling in a timely manner. That said, with the use of interrupts the issue is less dramatic, and I have not observed any sensible variation in the readings compared to the Arduino library. TODO Make a live recording with RPi and Arduino in paralell.
+Linux is not a proper real-time OS (note: that remarq apply only for the standard Raspbian distribution, has it do exist patched versions of Linux for real-time applications: TODO), so we have no garanty we're effectively monitor the edge falling in a timely manner. That said, with the use of interrupts the issue is less dramatic, and I have not observed any sensible variation in the readings compared to the Arduino library.
 
 You can install it on your Raspberry Pi using `pip`. The RPi.GPIO package need root privileges to read the pins, I thus recommend to install the lib root-wide:
 
@@ -70,14 +70,7 @@ If that's good to keep trace and share data, this is not an ideal way to visuali
 
 {% include figure.html img="/assets/2016-03-04-radiation-watch-raspberry/plotly-live.gif" url="https://plot.ly/~tournadey/137/radiation-dose-gamma-rays/" caption="Live plot of the radiation level at my country house, in the South-West of France" alt="Live plot of the radiation level at my country house." linkTitle="Click to see the data on Plotly" %}
 
-
-RPi: propose a built-case for 200 €. Monitore (to Safecast? to a backend of mime? to a custom endpoint?) as soon as you connect it to internet (Ethernet with DHCP).
-
-
-https://plot.ly/~tournadey/137
-
-
-
+For the next part we will make all that more open - I mean more open-data oriented. Stay tuned to see how we'll efficiently share our readings to the world.
 
 [part_one]: /2015/12/06/radiation-watch-arduino/
 [PiPocketGeiger_lib]: https://github.com/MonsieurV/PiPocketGeiger
