@@ -1,3 +1,18 @@
-<div class="embed-container">
-  <iframe src="{{ include.src }}" allowfullscreen></iframe>
-</div>
+<figure>
+  <div class="embed-container">
+    <iframe src="{{ include.src }}" allowfullscreen></iframe>
+    {% if include.url %}
+    </a>
+    {% endif %}
+  </div>
+  {% if include.caption %}
+    {% if include.url %}
+    <a href="{{ include.url }}"
+      {% if include.linkTitle %}title="{{ include.linkTitle }}"{% endif %}>
+    {% endif %}
+    <figcaption>{{ include.caption }}</figcaption>
+    {% if include.url %}
+    </a>
+    {% endif %}
+  {% endif %}
+</figure>

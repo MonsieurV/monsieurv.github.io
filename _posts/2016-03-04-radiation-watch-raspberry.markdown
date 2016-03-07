@@ -62,9 +62,7 @@ First typical application we can live-tweet the radiation level in our house to 
 
 Instead of logging to a file on your Rapsberry Pi you can also log to your Google Drive account:
 
-{% include iframe.html src="https://docs.google.com/spreadsheets/d/1tmT0lyzA3szkDKzPLKNK2xI0aqB33GnsbCKRP8-fwiM/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" %}
-
-https://docs.google.com/spreadsheets/d/1tmT0lyzA3szkDKzPLKNK2xI0aqB33GnsbCKRP8-fwiM/edit?usp=sharing
+{% include iframe.html src="https://docs.google.com/spreadsheets/d/1tmT0lyzA3szkDKzPLKNK2xI0aqB33GnsbCKRP8-fwiM/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" url="https://docs.google.com/spreadsheets/d/1tmT0lyzA3szkDKzPLKNK2xI0aqB33GnsbCKRP8-fwiM/edit?usp=sharing" caption="Logging on Google Docs" %}
 
 If that's good to keep trace and share data, this is not an ideal way to visualize it. There is a great service named Plotly on the web to create and share plots:
 
