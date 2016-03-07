@@ -62,15 +62,13 @@ First typical application we can live-tweet the radiation level in our house to 
 
 Instead of logging to a file on your Rapsberry Pi you can also log to your Google Drive account:
 
-<iframe src="https://docs.google.com/spreadsheets/d/1tmT0lyzA3szkDKzPLKNK2xI0aqB33GnsbCKRP8-fwiM/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" style="min-width: 500px;"></iframe>
+{% include iframe.html src="https://docs.google.com/spreadsheets/d/1tmT0lyzA3szkDKzPLKNK2xI0aqB33GnsbCKRP8-fwiM/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" %}
 
-https://docs.google.com/spreadsheets/d/1tmT0lyzA3szkDKzPLKNK2xI0aqB33GnsbCKRP8-fwiM/edit
+https://docs.google.com/spreadsheets/d/1tmT0lyzA3szkDKzPLKNK2xI0aqB33GnsbCKRP8-fwiM/edit?usp=sharing
 
 If that's good to keep trace and share data, this is not an ideal way to visualize it. There is a great service named Plotly on the web to create and share plots:
 
-TODO
-
-{% include figure.html img="/assets/2015-12-06-radiation-watch-arduino/bordeaux_agen_train_2015_12_02_radiation.svg" url="https://plot.ly/~tournadey/91/bordeaux-to-agen-on-train-2nd-december-2015/" alt="Plot of the radiation level on the train from Bordeaux to Agen the 2nd December 2015" linkTitle="Click to see the data on Plotly" %}
+{% include figure.html img="/assets/2016-03-04-radiation-watch-raspberry/plotly-live.gif" url="https://plot.ly/~tournadey/137/radiation-dose-gamma-rays/" caption="Live plot of the radiation level at my country house, in the South-West of France" alt="Live plot of the radiation level at my country house." linkTitle="Click to see the data on Plotly" %}
 
 
 RPi: propose a built-case for 200 €. Monitore (to Safecast? to a backend of mime? to a custom endpoint?) as soon as you connect it to internet (Ethernet with DHCP).
