@@ -9,15 +9,15 @@ lovehatefeedback: true
 draft: true
 ---
 
-Finally I've made time to write the follow-up of this series about the Radiation Watch Pocket Geiger.
-
-#### Getting connected with Raspberry Pi
+Finally the time has come for the follow-up of this series about the Radiation Watch Pocket Geiger.
 
 In [the first part][part_one] we were logging the radiation level to an SD card using an Arduino Uno. As my title promises a Geiger counter for your house, we need to do better! Like something actually connected.
 
-Indeed it would be great to post the radiation level online in real-time. To realize this mission we need a board that we can easily be connected to internet, and that obviously still able to speak with our Pocket Geiger. Guess what? This is exactly what Raspberry Pi is great at!
+#### Getting connected with Raspberry Pi
 
-Instead of connecting our Pocket Geiger to an Arduino, we will wire it to the Raspberry Pi GPIO ports. We will benefit the Raspberry Pi generous package: Ethernet and USB ports, so the network access is simple ; HDMI output, so we can check what's going on a screen. The Raspberry Pi ARM chip is also way more powerful than the Arduino Uno ATmega328 microcontroller: it can honorably run a whole GNU/Linux distribution. With the dedicated Raspbian - a Debian-fork - we will enjoy a familiar and welcoming environment.
+Indeed it would be great to post the radiation level online in real-time. To realize this mission we need a board that can easily be connected to internet, and that is obviously able to speak with our Pocket Geiger. Guess what? This is exactly what Raspberry Pi is great at!
+
+Instead of connecting our Pocket Geiger to an Arduino we will wire it to the Raspberry Pi GPIO ports. We will benefit the Raspberry Pi generous package: Ethernet and USB ports, so the network access is simple ; HDMI output, so we can check on a screen what's going on. The Raspberry Pi [ARM chip](https://www.arm.com/products/processors/classic/arm11/arm1176.php) is also way more powerful than the Arduino Uno [ATmega328 microcontroller](http://www.atmel.com/devices/atmega328p.aspx): it can honorably run a whole GNU/Linux distribution. With the dedicated Raspbian - a Debian-fork - we will enjoy a familiar and welcoming environment.
 
 {% include figure.html img="/assets/2016-03-04-radiation-watch-raspberry/raspberry-pi-and-pocket-geiger-1.png" caption="Connecting the Pocket Geiger to a Raspberry Pi also requires a bit of soldering to attach wires on the Pocket Geiger board. Then you plug the wires to the GPIO pins and you're ready to go!" alt="Wiring of Pocket Geiger and Raspberry Pi" %}
 
@@ -25,9 +25,9 @@ Having the Pocket Geiger linked to the Raspberry Pi is exciting, however that do
 
 #### Had hardware, need software
 
-As I haven't found something that convinced me{%include footnote_ref.html number="1" %}, I developed a Python library for the purpose: please welcome the [PiPocketGeiger library][PiPocketGeiger_lib]!
+As I haven't found something that convinced me{%include footnote_ref.html number="1" %} I developed a Python library to communicate with the PocketGeiger: please welcome the [PiPocketGeiger lib][PiPocketGeiger_lib].
 
-The PiPocketGeiger library is built on top of the [RPi.GPIO][rpi_gpio_lib] package. It uses [edge detection][rpi_gpio_irq] interrupt to [count](https://github.com/MonsieurV/PiPocketGeiger/blob/22f29b0a3c3e5f46a8afa1e37b82a58c012ae456/PiPocketGeiger/__init__.py#L102) the radiation and periodically [processes](https://github.com/MonsieurV/PiPocketGeiger/blob/22f29b0a3c3e5f46a8afa1e37b82a58c012ae456/PiPocketGeiger/__init__.py#L119) the statistics in a thread.
+The PiPocketGeiger library is built on top of the [RPi.GPIO][rpi_gpio_lib] package. It uses [edge detection][rpi_gpio_irq] interrupt to [count](https://github.com/MonsieurV/PiPocketGeiger/blob/22f29b0a3c3e5f46a8afa1e37b82a58c012ae456/PiPocketGeiger/__init__.py#L102) the radiation and periodically [processes](https://github.com/MonsieurV/PiPocketGeiger/blob/22f29b0a3c3e5f46a8afa1e37b82a58c012ae456/PiPocketGeiger/__init__.py#L119) the statistics in a thread. This is roughly a Python rewrite of the [Arduino lib](https://github.com/MonsieurV/ArduinoPocketGeiger) C code.
 
 Note that Linux is not a real-time OS{% include footnote_ref.html number="2" %}, so we have no guarantee we're effectively monitoring the edge falling in a timely manner. That said I have not observed any sensible variation in the readings compared to the measurements done with the Arduino library.
 
