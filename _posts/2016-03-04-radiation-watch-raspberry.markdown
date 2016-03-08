@@ -11,26 +11,32 @@ draft: true
 
 Finally I've made time to write the follow-up of this series about the Radiation Watch Pocket Geiger.
 
-In [the first part][part_one] we were logging the radiation level offline using an Arduino with an SD card. As my title promises a Geiger counter for your house, we need to do better! Actually something more connected.
+#### Getting connected with Raspberry Pi
 
-It will be great to post the radiation level online and in real-time. For that we need a board that we can easily connect to internet, but also still still be linked to our Pocket Geiger. Guess what? This is exactly what Raspberry Pi is great at!
+In [the first part][part_one] we were logging the radiation level to an SD card using an Arduino Uno. As my title promises a Geiger counter for your house, we need to do better! Like something actually connected.
 
-So instead of connecting our Pocket Geiger to an Arduino board, we will wire it to the Raspberry Pi GPIO ports. We will benefit the Raspberry Pi generous package: Ethernet and USB ports, so the network access is simple ; it also have HDMI if you want to see what's you're doing on a screen. The computing power of the ARM chip is also way above the Arduino Uno ATmega328 microcontroller, so it can run a whole GNU/Linux distribution. We will enjoy the environment to rapidly hack some apps with Python.
+Indeed it would be great to post the radiation level online in real-time. To realize this mission we need a board that we can easily be connected to internet, and that obviously still able to speak with our Pocket Geiger. Guess what? This is exactly what Raspberry Pi is great at!
+
+Instead of connecting our Pocket Geiger to an Arduino, we will wire it to the Raspberry Pi GPIO ports. We will benefit the Raspberry Pi generous package: Ethernet and USB ports, so the network access is simple ; HDMI output, so we can check what's going on a screen. The Raspberry Pi ARM chip is also way more powerful than the Arduino Uno ATmega328 microcontroller: it can honorably run a whole GNU/Linux distribution. With the dedicated Raspbian - a Debian-fork - we will enjoy a familiar and welcoming environment.
 
 {% include figure.html img="/assets/2016-03-04-radiation-watch-raspberry/raspberry-pi-and-pocket-geiger-1.png" caption="Connecting the Pocket Geiger to a Raspberry Pi also requires a bit of soldering to attach wires on the Pocket Geiger board. Then you plug the wires to the GPIO pins and you're ready to go!" alt="Wiring of Pocket Geiger and Raspberry Pi" %}
 
-The global picture is good, however we need a way to communicate and get the readings from the Pocket Geiger to our Raspberry Pi. As I found nothing convincing for that, I've developed a Python library for the purpose: please welcome [the PiPocketGeiger lib][PiPocketGeiger_lib].
+Having the Pocket Geiger linked to the Raspberry Pi is exciting, however that doesn't bring much in itself. Without software hardware is of no use! So we need a way to communicate with the Pocket Geiger and get the readings from our Raspberry Pi.
 
-The PiPocketGeiger library is built on top of the [RPi.GPIO] package. It uses edge signal interrupt to count the radiation and detect noisy condition.
+#### Had hardware, need software
 
-Linux is not a proper real-time OS{% include footnote_ref.html number="1" %}, so we have no garanty we're effectively monitor the edge falling in a timely manner. That said, with the use of interrupts the issue is less dramatic, and I have not observed any sensible variation in the readings compared to the Arduino library.
+As I haven't found something that convinced me{%include footnote_ref.html number="1" %}, I developed a Python library for the purpose: please welcome the [PiPocketGeiger library][PiPocketGeiger_lib]!
+
+The PiPocketGeiger library is built on top of the [RPi.GPIO][rpi_gpio_lib] package. It uses [edge detection][rpi_gpio_irq] interrupt to [count](https://github.com/MonsieurV/PiPocketGeiger/blob/22f29b0a3c3e5f46a8afa1e37b82a58c012ae456/PiPocketGeiger/__init__.py#L102) the radiation and periodically [processes](https://github.com/MonsieurV/PiPocketGeiger/blob/22f29b0a3c3e5f46a8afa1e37b82a58c012ae456/PiPocketGeiger/__init__.py#L119) the statistics in a thread.
+
+Note that Linux is not a real-time OS{% include footnote_ref.html number="2" %}, so we have no guarantee we're effectively monitoring the edge falling in a timely manner. That said I have not observed any sensible variation in the readings compared to the measurements done with the Arduino library.
 
 You can install it on your Raspberry Pi using `pip`. The RPi.GPIO package need root privileges to read the pins, I thus recommend to install the lib root-wide:
 
 ```sudo install pip PiPocketGeiger
 ```
 
-That done you can use the lib in your Python script, with only one line to initialize indicate the GPIO pins on which the Pocket Geiger is connected. Then you can get the current radiation level whenever you need.
+That done you can use the lib in your Python script, with only one line to initialize indicate the GPIO pins on which the Pocket Geiger is connected. Then you can get the current radiation level whenever you need:
 
 ```
 # We initialize the lib with respectively the radiation signal and noise pins number.
@@ -39,7 +45,7 @@ with RadiationWatch(24, 23) as radiationWatch:
     # {'duration': 14.9, 'uSvh': 0.081, 'uSvhError': 0.081, 'cpm': 4.29}
 ```
 
-For those that already imagine reactive applications you can also register a callbacks that will be triggered in case of a radiation event, or when there is too much noise:
+For those that already imagine reactive applications you can also register a callbacks that will be triggered when a gamma ray drop on the Pocket Geiger, or when there is a noise event:
 
 ```
 def onRadiation():
@@ -52,6 +58,8 @@ with RadiationWatch(24, 23) as radiationWatch:
    while 1:
        time.sleep(1)
 ```
+
+#### Real-time online publishing
 
 To truly benefit the power of our Raspberry Pi we have made scripts to publish on live the data on web services.
 
@@ -71,9 +79,14 @@ If that's good to keep trace and share data, this is not an ideal way to visuali
 For the next part we will make all that more open - I mean more open-data oriented. Stay tuned to see how we'll efficiently share our readings to the world.
 
 <br>
-<h5>Notes</h5>
 
-{% include footnote.html number="1" note="This comment apply only for the standard Raspbian distribution, has it does exist patched versions of Linux for real-time applications. For e.g. the RT-Preempt Patch that has soft real-time requirements. You may also check the Xenomai or RTLinux hard real-time projects, which each kind of make cohabit a real-time kernel with the Linux one." %}
+##### Notes
+
+{% include footnote.html number="1" note="There is this [C driver](https://github.com/orsp/Pocket_Rasdiation_Counter) that seems to work fine (haven't tested it), but I wanted a 100 % Python interface and a lib that can be easily distributed and installed with pip." %}
+
+{% include footnote.html number="2" note="This comment apply only for the standard Raspbian distribution, has it does exist a patched version of Linux for real-time applications: the [RT-Preempt Patch](https://rt.wiki.kernel.org/index.php/RT_PREEMPT_HOWTO), that has soft real-time requirements. You may also check the [Xenomai](https://xenomai.org/start-here/) or [RTLinux](https://en.wikipedia.org/wiki/RTLinux) projects, which each kind of make cohabit a real-time kernel with the Linux one, enabling hard real-time." %}
 
 [part_one]: /2015/12/06/radiation-watch-arduino/
 [PiPocketGeiger_lib]: https://github.com/MonsieurV/PiPocketGeiger
+[rpi_gpio_lib]: https://pypi.python.org/pypi/RPi.GPIO
+[rpi_gpio_irq]: https://sourceforge.net/p/raspberry-gpio-python/wiki/Inputs/#interrupts-and-edge-detection

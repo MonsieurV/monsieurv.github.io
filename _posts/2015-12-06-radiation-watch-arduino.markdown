@@ -18,6 +18,8 @@ Radiation Watch is a scientific and citizen initiative born after the Fukushima 
 
 Initially conceived to be connected to an iPhone, Radation Watch now provides an embedded version of the Pocket Geiger. Whatever version is used, the board includes a [X100-7 PIN photodiode][X100_datasheet] from FirstSensor for [gamma-ray detection][rw_uk_faqs]. It is thus not a proper [Geiger-Müller][gm_tube] counter.
 
+#### What are these rays?
+
 In you don't remember well we usually classify radiations under three hats: alpha, beta and gamma rays. Alpha and beta radiation are charged particles, whereas gamma rays are photons of electromagnetic energy, with no charge and mass. They are all three considered ionizing radiation - which means they can [alter][alter_matter] the matter they go through -, but have very different penetrating and ionizing abilities due to their respective mass, size and nature.
 
 Alpha and beta radiation can be stopped by an aluminum foil: if you don't [play with radioactive sources][marie_curie_death] or [ingest contaminated substances][radium_girls] you hopefully won't be exposed to significant level of alpha and beta rays, except maybe from [the radon in your house][radon_house]. This contrasts with the very high frequency electromagnetic nature of gamma rays, giving them a super high ability to pass through matter: imagine your Wifi on steroids, with a frequency of above [10 exahertz][spectrum] and an [energy][electronvolt] more than 100,000,000 times greater. Yes, it can cooks your DNA like your microwave boils your Chinese noodles.
@@ -27,6 +29,8 @@ Alpha and beta radiation can be stopped by an aluminum foil: if you don't [play 
 When you consider [background radiation][bg_rad] monitoring, detecting only gamma rays gives you a sensible indication of your exposition to radiation, from both natural and artificial sources. If it will fail to detect the contamination of your food or water, it will help you determine the environment radiation level and its changes over time. Cosmic rays are chasing [your computer][cosmic_ray_electronics]? Doubtful steam [comes out][tmii] of the house of your maybe-too-genius neighbor? You'll have a chance to really know.
 
 Speaking of ionizing radiation and its effect on human body, we use the sievert unit to quantify a dose. One sievert is bad enough to significantly increases chances of cancer (see this great [dose chart][dose_chart]). Since we don't usually absorb high-level dose in a [one shot manner][al_poisoning], we associates the unit with a time dimension when we do background measurements: e.g. uSv/h, for the amount of ionizing radiation you will received staying at a place for one hour.
+
+#### How to catch them?
 
 Ok, enough radioactivity blabla, place to electronic and code. The Pocket Geiger board comes with four pins: two are for the usual alimentation stuff (`+V`, `GND`) and the two others for the signals (`SIG`, `NS`). When the sensor is hit by a radiation, it will simply pull the radiation pin (`SIG`) to an high voltage level for some microseconds. But as the photodiode sensor is sensible to vibrations, Radiation Watch also included an accelerometer so we can get notice of them through the noise pin (`NS`) and dismiss the corresponding false-positives.
 
@@ -46,6 +50,8 @@ This object must be initialized at the Arduino setup phase with `RadiationWatch:
 Then you can get the radiation level whenever you need using `RadiationWatch::uSvh()`, with the current incertitude specified by `RadiationWatch::uSvhError()`. You can also register callbacks that will be called in case of radiation or vibration occurrence, with respectively `RadiationWatch::registerRadiationCallback()` and `RadiationWatch::registerNoiseCallback()`.
 
 Complete examples can be found [here][apg_geiger_samples].
+
+#### Gotta catch 'em all!
 
 Finally all this is good, but for one purpose: measuring the background radiation level. Let's see what kind of data we can get from it.
 
@@ -68,6 +74,8 @@ Since I don't have any radioactive source (for the happy folks living in USA, yo
 You have maybe noticed the Pocket Geiger is not accurate enough to give instant results: it need at least two minutes to reduce the error incertitude and stabilize the readings. You can spot this on the graphs: the first results are highly dispersed, with a great incertitude range.
 
 Since this device seems good for background monitoring, I'll connect it to my Raspberry Pi so we can plot the data online in real-time. Stay tuned.
+
+Edit March 14th, 2016: The [second part](2016/03/04/radiation-watch-raspberry/) is now out!
 
 <br>
 
