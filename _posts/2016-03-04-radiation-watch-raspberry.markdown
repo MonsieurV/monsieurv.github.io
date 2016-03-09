@@ -11,7 +11,7 @@ draft: true
 
 Finally the time has come for the follow-up of this series about the Radiation Watch Pocket Geiger.
 
-In [the first part][part_one] we were logging the radiation level to an SD card using an Arduino Uno. As my title promises a Geiger counter for your house, we need to do better! Like something actually connected.
+In [the first part][part_one] about the Pocket Geiger counter we were logging the measurements to an SD card with an Arduino. As my title promises a Geiger counter for your house, we need to do better! Like something actually connected.
 
 #### Getting connected with Raspberry Pi
 
