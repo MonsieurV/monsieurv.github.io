@@ -6,7 +6,8 @@ categories: [Embedded systems]
 tags: [Embedded systems, data logging, Raspberry Pi, Geiger counter, radiation]
 brief: "Keep an eye on those sneaky gamma rays using your Raspberry Pi."
 lovehatefeedback: true
-draft: true
+draft: false
+hacker_news: https://news.ycombinator.com/item?id=11260709
 ---
 
 Finally the time has come for the follow-up of this series about the Radiation Watch Pocket Geiger counter.
