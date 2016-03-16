@@ -75,7 +75,7 @@ You have maybe noticed the Pocket Geiger is not accurate enough to give instant 
 
 Since this device seems good for background monitoring, I'll connect it to my Raspberry Pi so we can plot the data online in real-time. Stay tuned.
 
-Edit March 14th, 2016: The [second part](2016/03/04/radiation-watch-raspberry/) is now out!
+Edit March 14th, 2016: The [second part](/2016/03/04/radiation-watch-raspberry/) is now out!
 
 <br>
 
