@@ -1,10 +1,10 @@
 ---
 layout: post
 author: yoan
-title: "Featuring the Safecast initiative"
+title: "A Geiger counter for your house - Part 3"
 categories: [Embedded systems]
-tags: [Embedded systems, data logging, radiation, Geiger counter]
-brief: "Keep an eye on those sneaky gamma rays using your Raspberry Pi."
+tags: [Embedded systems, data logging, radiation, Geiger counter, open-data, Safecast]
+brief: "Featuring the Safecast open-data initiative."
 lovehatefeedback: true
 draft: true
 ---
@@ -13,6 +13,19 @@ Another project followed the Fukushima crisis: the bGeigie by Safecast provides 
 
 Rpi: Connect this to the Safecast API for stationary measurements. TODO Send message to Safecast
 
+Python lib
+https://github.com/MonsieurV/SafecastPy
+
+https://drive.google.com/a/effi-synchrone.com/file/d/0B7IJHJBUg61CZjk0YTQ1ZDYtOWQ0My00MzRlLWJmZTQtYTAyMTUyMzM3ZDBi/view
+
+About data
+http://blog.safecast.org/faq/data/
+Useful data - best practices
+http://blog.safecast.org/2014/01/useful-data/
+About sensor
+http://blog.safecast.org/faq/radiation/
+
+Post in https://groups.google.com/forum/#!topic/safecast-devices/nxA8XxFzD0E
 
 https://kithub.cc/safecast/
 First:
