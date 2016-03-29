@@ -9,6 +9,62 @@ lovehatefeedback: true
 draft: true
 ---
 
+
+Get last live data from Safecast API and plot it with Plotly.
+
+<figure>
+  <div id="plot-safecast-soubeyrac"></div>
+  <figcaption>Caption</figcaption>
+</figure>
+
+<script type="text/javascript" src="https://cdn.plot.ly/plotly-1.5.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
+<script>
+  var data = [ { x: [], y: [], type: 'scatter' } ];
+  function doPlot() {
+    // TODO To make it responsive at window resizing
+    // https://plot.ly/javascript/responsive-fluid-layout/
+    Plotly.plot(
+      document.getElementById('plot-safecast-soubeyrac'),
+      data,
+      {
+        xaxis: {
+        title: 'Timestamp'
+        },
+        yaxis: {
+        title: 'Radiation dose (uSv/h)'
+        },
+        margin: {
+          t: 10
+        }
+      }
+    );
+  }
+  // Download 100 data points (25*4).
+  var PAGES = 4;
+  var promises = [];
+  var results = [];
+  for(var i = 1; i <= PAGES; i++) {
+    promises.push(
+      new Promise(function(i, resolve, reject) {
+        jQuery.get('https://api.safecast.org/measurements.json?order=captured_at+desc&user_id=992&page=' + i, function(i, response) {
+          results[i] = response;
+          resolve();
+        }.bind(null, i));
+      }.bind(null, i))
+    );
+  }
+  Promise.all(promises).then(function () {
+    for(var i = PAGES; i >= 1; i--) {
+      results[i].reverse().forEach(function(dataPoint) {
+        data[0].x.push(dataPoint.captured_at.replace('T', ' ').replace('Z', '')),
+        data[0].y.push(dataPoint.value)
+      });
+    }
+    doPlot();
+  });
+</script>
+
 Another project followed the Fukushima crisis: the bGeigie by Safecast provides a complete and full-pledged radiation sensor. Compared to the Radiation Watch Pocket Geiger, [it is not cheap][safecast_bgeigie_nano], but way more complete. Mobile radiation measurement. It comes as a kit to build and allows to monitor all Alpha, Beta and Gamma radiations. It can be considered as a whole system: provides an API. Map. Community.
 
 Rpi: Connect this to the Safecast API for stationary measurements. TODO Send message to Safecast
