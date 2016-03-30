@@ -81,6 +81,8 @@ These examples are fine to keep trace of raw data, but not quite handy to visual
 
 For the next part we will make all that more open - I mean more open-data oriented. Coming soon. Hopefully. Yeah we're pretty lazy here.
 
+Edit March 30th, 2016: [Here it is](/2016/03/30/radiation-watch-safecast/)!
+
 <br>
 
 ##### Notes
