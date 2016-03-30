@@ -11,6 +11,9 @@ draft: true
 
 RPi: propose a built-case for 200 €. Monitore (to Safecast? to a backend of mime? to a custom endpoint?) as soon as you connect it to internet (Ethernet with DHCP).
 
+Logging to http://radmon.org/
+To Plotly
+
 Commande pré-série avec Stripe
 
 Faire Dossier de presse (voir Safe, Equisense, Safecast):
