@@ -48,7 +48,7 @@ To test things out I myself maintain one of my Raspberry Pi logging my Pocket Ge
 
 <figure>
   <div id="plot-safecast-soubeyrac"></div>
-  <figcaption>These measurements are published to the Safecast API by my Raspberry Pi, and grabbed back and plotted for you in this browser with plotly.js. Simply inspect the page to see the javascript sources.</figcaption>
+  <figcaption>These measurements are published to the Safecast API by my Raspberry Pi, and grabbed back and plotted for you in this browser with plotly.js. Inspect the page to see the javascript sources.</figcaption>
 </figure>
 
 <script type="text/javascript" src="https://cdn.plot.ly/plotly-1.5.0.min.js"></script>
@@ -99,12 +99,7 @@ To test things out I myself maintain one of my Raspberry Pi logging my Pocket Ge
 
 You can retrieve them directly on the Safecast API [website]((https://api.safecast.org/en-US/users/992/measurements?order=captured_at+desc)).
 
-I hope you've enjoyed this series! Don't miss the chance to [tell me](mailto:yoan@ytotech.com). If you have great projects in the same vein I'll be very happy to hear them from you! I myself have ideas following on from that series. Maybe you'll have funnier ones?
-
-
-It brings . , bringing an easy and fast path
-
-Get last live data from Safecast API and plot it with Plotly.
+I hope you've enjoyed this series. Don't miss the chance to [tell me](mailto:yoan@ytotech.com)! If you have great projects in the same vein I'll be very happy to hear them from you. I myself have ideas following on from that series. Maybe you'll have funnier ones?
 
 <br>
 
@@ -116,4 +111,4 @@ Get last live data from Safecast API and plot it with Plotly.
 
 {% include footnote.html number="3" note="For the usage please refer to the [GitHub README](https://github.com/MonsieurV/SafecastPy#basic-usage)." %}
 
-{% include footnote.html number="4" note="For the usage please refer to the [GitHub README](https://github.com/MonsieurV/SafecastPy#basic-usage)." %}
+{% include footnote.html number="4" note="I'm already sorry for the data logging discontinuity, caused by my internet connection very too frequent outages. I really do need to relocate." %}
