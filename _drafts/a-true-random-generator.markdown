@@ -2,7 +2,7 @@
 layout: post
 author: yoan
 title: "A True Random Generator"
-categories: [Embedded systems]
+categories: [Random]
 tags: [Embedded systems, data logging, Raspberry Pi, Geiger counter, radiation]
 brief: "YtoTech provides you ray events for a real random generator."
 lovehatefeedback: true

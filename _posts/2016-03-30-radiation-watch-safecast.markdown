@@ -3,7 +3,7 @@ layout: post
 author: yoan
 title: "A Geiger counter for your house - Part 3"
 categories: [Embedded systems]
-tags: [Embedded systems, data logging, radiation, Geiger counter, open-data, Safecast]
+tags: [Embedded systems, data logging, radiation, Geiger counter, open-data, Safecast, radiation]
 brief: "Featuring the Safecast open-data initiative."
 lovehatefeedback: true
 draft: true
@@ -42,7 +42,26 @@ You can also use the library to navigate through the Safecast open-data and use 
 
 Coming back to our Pocket Geiger playground, we can now publish its measurements to the Safecast API. That will be our way to create a bridge between these two great initiatives than are Radiation Watch and Safecast.
 
-With the [PiPocketGeiger](https://github.com/MonsieurV/PiPocketGeiger) this is a no-brainer
+With the [PiPocketGeiger](https://github.com/MonsieurV/PiPocketGeiger) library this is a no-brainer:
+
+```# Init the libs.
+safecast = SafecastPy.SafecastPy(api_key=API_KEY)
+with RadiationWatch(PIN_SIGNAL, PIN_NOISE) as radiationWatch:
+  while 1:
+    # Get the Pocket Geiger measurement and publish it.
+    safecast.add_measurement(json={
+      'latitude': '49.418683',
+      'longitude': '2.823469',
+      'value': radiationWatch.status().get('uSvh'),
+      'unit': SafecastPy.UNIT_USV,
+      'captured_at': datetime.datetime.utcnow().isoformat() + '+00:00',
+      'device_id': device_id
+    })
+    # Wait until the next reading.
+    time.sleep(5 * 60)
+```
+
+The complete code can be found [here](https://github.com/MonsieurV/PiPocketGeiger/blob/master/examples/safecast.py).
 
 To test things out I myself maintain one of my Raspberry Pi logging my Pocket Geiger readings to Safecast:
 
@@ -97,9 +116,13 @@ To test things out I myself maintain one of my Raspberry Pi logging my Pocket Ge
   });
 </script>
 
-You can retrieve them directly on the Safecast API [website]((https://api.safecast.org/en-US/users/992/measurements?order=captured_at+desc)).
+All these measurements can been retrieved directly on the Safecast API [website]((https://api.safecast.org/en-US/users/992/measurements?order=captured_at+desc)). As you can observe there still isn't much interesting hazard in my house. Does someone has Cesium 137 to send me?
 
-I hope you've enjoyed this series. Don't miss the chance to [tell me](mailto:yoan@ytotech.com)! If you have great projects in the same vein I'll be very happy to hear them from you. I myself have ideas following on from that series. Maybe you'll have funnier ones?
+#### Exhausting the promise
+
+Now you can take a Raspberry Pi, get your hand on a Radiation Watch Pocket Geiger, and yeah you'll have a Geigier counter for your house. The software produced in this series is open-sourced and documented{%include footnote_ref.html number="5" %}, so if you have basic hardware and Python skills you surely be able to get it work. No more unnoticed rays in your house!
+
+I hope you've enjoyed this series. Please don't miss the chance to [tell me](mailto:yoan@ytotech.com)! Also if you have projects in the same vein I'll be very happy to hear from you. I myself have ideas following on from that series{%include footnote_ref.html number="6" %}. Maybe you'll have funnier ones?
 
 <br>
 
@@ -112,3 +135,7 @@ I hope you've enjoyed this series. Don't miss the chance to [tell me](mailto:yoa
 {% include footnote.html number="3" note="For the usage please refer to the [GitHub README](https://github.com/MonsieurV/SafecastPy#basic-usage)." %}
 
 {% include footnote.html number="4" note="I'm already sorry for the data logging discontinuity, caused by my internet connection very too frequent outages. I really do need to relocate." %}
+
+{% include footnote.html number="5" note="More or less. Tell me where it's not good or clear enough." %}
+
+{% include footnote.html number="6" note="Like putting all that in a box and create a software platform for everyone to easily publish background radiation measurements. It will be the people choice to publish their sensor data to internet services or open-data platforms X or Y - simply by pushing a button. Well, that's an idea." %}
