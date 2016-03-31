@@ -36,21 +36,22 @@ A major difference with the Arduino version is that Linux is not a hard real-tim
 
 You can install the library using `pip`. The RPi.GPIO package needs root privileges to access to the hardware, I thus recommend to install the lib root-wide:
 
-```sudo install pip PiPocketGeiger
-```
+{% highlight shell %}
+sudo install pip PiPocketGeiger
+{% endhighlight %}
 
 That done you can use the lib in your Python script. You firstly initialize the lib to indicates which GPIO pins to read from. Then you can get the current background computed radiation level whenever you need:
 
-```
+{% highlight python %}
 # We initialize the lib with respectively the radiation signal and noise pins number.
 with RadiationWatch(24, 23) as radiationWatch:
     print(radiationWatch.status())
     # {'duration': 14.9, 'uSvh': 0.081, 'uSvhError': 0.081, 'cpm': 4.29}
-```
+{% endhighlight %}
 
 For those that already ask for reactive applications, yes you can register callbacks that will be triggered when a gamma ray drop on the Pocket Geiger, or when there is noisy events:
 
-```
+{% highlight python %}
 def onRadiation():
     print("Ray appeared!")
 def onNoise():
@@ -60,7 +61,7 @@ with RadiationWatch(24, 23) as radiationWatch:
    radiationWatch.registerNoiseCallback(onNoise)
    while 1:
        time.sleep(1)
-```
+{% endhighlight %}
 
 #### Real-time online publishing
 

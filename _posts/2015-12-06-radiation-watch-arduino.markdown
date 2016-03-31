@@ -42,8 +42,9 @@ The library is available [on GitHub][apg_lib] and released under the MIT license
 
 To use it, you need to create a `Radiation Watch` object with the pin and matching IRQ numbers to which are connected your Pocket Geiger:
 
-```RadiationWatch radiationWatch(signPin, noisePin, signIrq, noiseIrq);
-```
+{% highlight cpp %}
+RadiationWatch radiationWatch(signPin, noisePin, signIrq, noiseIrq);
+{% endhighlight %}
 
 This object must be initialized at the Arduino setup phase with `RadiationWatch::setup()`. In your program main loop you also need to run the `RadiationWatch::loop()` frequently in order to compute the statistics.
 
