@@ -191,6 +191,15 @@ aside {
       font-style: italic;
     }
   }
+  figure.highlight {
+    text-align: left;
+    padding: 8px 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-bottom-width: 2px;
+    border-radius: 3px;
+    background-clip: padding-box;
+  }
 }
 
 .label {
@@ -221,7 +230,8 @@ code {
   word-wrap: normal;
   display: inline-block;
   margin: 0;
-  font: 14px/1.8em Menlo, Consolas, "Courier New", Courier, "Liberation Mono", monospace;
+  font-family: Monaco,"DejaVu Sans Mono","Courier New",monospace;
+  font-size: 14px/1.8em;
 }
 
 @media (min-width: 768px) {

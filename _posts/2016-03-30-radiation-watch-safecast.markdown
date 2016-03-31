@@ -17,6 +17,8 @@ To do better we should ensure the data will last beyond our enthusiastic-initiat
 
 We're fortunate because this is exactly what the Safecast project aims to provide: an open platform for everyone to publish their environmental data, with great [navigation and visualization tools](http://safecast.org/tilemap/), a [real-time portal](http://realtime.safecast.org/) and last but not least a hacker [data oriented mindset](http://blog.safecast.org/faq/).
 
+{% include figure.html img="https://raw.githubusercontent.com/MonsieurV/SafecastPy/master/misc/safecast_logo.png" caption="As they put it, Safecast is a global volunter-centered citizen science project working to empower people with data about their environments." %}
+
 The [Safecast initiative](http://blog.safecast.org/about/) also followed the Fukushima crisis, in an urge to collect and publish accurate and trustworthy open radiation data, openly accessible to citizens of the world{%include footnote_ref.html number="1" %}. The volunteer-driven organization has been known to provides efficient technical means, like the bGeigie Nano device, a full-pledged radiation sensor.
 
 Compared to the Radiation Watch Pocket Geiger, the bGeigie [it is not cheap](http://shop.kithub.cc/products/safecast-bgeigie-nano){%include footnote_ref.html number="2" %}, but way more complete and accurate. With its GPS chip and real-time clock it allows effective mobile radiation measurements. Its [pancake](http://www.lndinc.com/products/17/) can monitor all Alpha, Beta and Gamma radiations. The device has been successfully used to collect millions of data-points.
@@ -29,8 +31,9 @@ To made things really easier I've developed a Python wrapper for the Safecast AP
 
 To make it works, that's the usual Python pip-ABC:
 
-```pip install SafecastPy
-```
+{% highlight sh %}
+pip install SafecastPy
+{% endhighlight %}
 
 Then do whatever you want{%include footnote_ref.html number="3" %}. Only do please be [conscientious](http://blog.safecast.org/2014/01/useful-data/) about the data you sent to the Safecast API, as this is a voluntarily maintained database. To test things out you can use the [development instance](http://dev.safecast.org/), which do not fear messy data.
 
@@ -44,7 +47,8 @@ Coming back to our Pocket Geiger playground, we can now publish its measurements
 
 With the [PiPocketGeiger](https://github.com/MonsieurV/PiPocketGeiger) library this is a no-brainer:
 
-```# Init the libs.
+{% highlight python %}
+# Init the libs.
 safecast = SafecastPy.SafecastPy(api_key=API_KEY)
 with RadiationWatch(PIN_SIGNAL, PIN_NOISE) as radiationWatch:
   while 1:
@@ -59,7 +63,7 @@ with RadiationWatch(PIN_SIGNAL, PIN_NOISE) as radiationWatch:
     })
     # Wait until the next reading.
     time.sleep(5 * 60)
-```
+{% endhighlight %}
 
 The complete code can be found [here](https://github.com/MonsieurV/PiPocketGeiger/blob/master/examples/safecast.py).
 
