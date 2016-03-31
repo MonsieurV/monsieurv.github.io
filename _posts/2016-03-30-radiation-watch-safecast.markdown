@@ -38,7 +38,7 @@ As Python is a very convenient language to manipulate near any data format you'l
 
 You can also use the library to navigate through the Safecast open-data and use it on your own project.
 
-#### Radiation Watch featuring Safecast
+#### Radiation Watch feat. Safecast
 
 Coming back to our Pocket Geiger playground, we can now publish its measurements to the Safecast API. That will be our way to create a bridge between these two great initiatives than are Radiation Watch and Safecast.
 
@@ -118,9 +118,9 @@ To test things out I myself maintain one of my Raspberry Pi logging my Pocket Ge
 
 All these measurements can been retrieved directly on the Safecast API [website]((https://api.safecast.org/en-US/users/992/measurements?order=captured_at+desc)). As you can observe there still isn't much interesting hazard in my house. Does someone has Cesium 137 to send me?
 
-#### Exhausting the promise
+#### Fulfilling the promise
 
-Now you can take a Raspberry Pi, get your hand on a Radiation Watch Pocket Geiger, and yeah you'll have a Geigier counter for your house. The software produced in this series is open-sourced and documented{%include footnote_ref.html number="5" %}, so if you have basic hardware and Python skills you surely be able to get it work. No more unnoticed rays in your house!
+Now you can take a Raspberry Pi, get your hand on a Radiation Watch Pocket Geiger, and yeah you'll have a Geigier counter for your house. The software produced in this series is open-sourced and documented{%include footnote_ref.html number="5" %}, so if you have basic hardware and Python skills you surely be able to get it work. No more unnoticed wild rays in your house!
 
 I hope you've enjoyed this series. Please don't miss the chance to [tell me](mailto:yoan@ytotech.com)! Also if you have projects in the same vein I'll be very happy to hear from you. I myself have ideas following on from that series{%include footnote_ref.html number="6" %}. Maybe you'll have funnier ones?
 
@@ -134,7 +134,7 @@ I hope you've enjoyed this series. Please don't miss the chance to [tell me](mai
 
 {% include footnote.html number="3" note="For the usage please refer to the [GitHub README](https://github.com/MonsieurV/SafecastPy#basic-usage)." %}
 
-{% include footnote.html number="4" note="I'm already sorry for the data logging discontinuity, caused by my internet connection very too frequent outages. I really do need to relocate." %}
+{% include footnote.html number="4" note="I already apologize for the data logging discontinuity, caused by the very too frequent outages of my internet connection. I really do need to relocate." %}
 
 {% include footnote.html number="5" note="More or less. Tell me where it's not good or clear enough." %}
 
