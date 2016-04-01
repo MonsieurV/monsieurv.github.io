@@ -6,7 +6,8 @@ categories: [Embedded systems]
 tags: [Embedded systems, data logging, radiation, Geiger counter, open-data, Safecast, radiation]
 brief: "Featuring the Safecast open-data initiative."
 lovehatefeedback: true
-draft: true
+draft: false
+hacker_news: https://news.ycombinator.com/item?id=11406790
 ---
 
 In [the previous part](/2016/03/04/radiation-watch-raspberry/) we show how to publish and share our radiation measurements through internet services. But what is their value if we don't have an appropriate way to navigate, consult, visualize and centralize these measurements with those of others? How to give the measurements a meaning and a purpose?
