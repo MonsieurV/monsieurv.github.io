@@ -97,7 +97,7 @@ To avoid others the same roaming I've put on GitHub [an overview][overview_githu
 
 #### Edit 17th November
 
-As Marcos Duarte pointed out on [HN][hn_md_comment], the PeakUtils `indexes` function was actually inspired by his implementation of `detect_peaks`, explaining the similar results. Moreover he notes that the PeakUtils comes with other convenient utilities, such as `baseline` or `interpolate`.
+As Lucas Hermann Negri pointed out on [HN][hn_md_comment], the PeakUtils `indexes` function was actually inspired by Marcos Duarte implementation of `detect_peaks`, explaining the similar results. Moreover he notes that the PeakUtils comes with other convenient utilities, such as `baseline` or `interpolate`.
 
 The [`interpolate` function][interpolate_ref] enhances the peak resolution by fitting Gaussians or computing centroids. Taking the previous example, here how you get it work:
 
