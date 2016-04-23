@@ -7,7 +7,7 @@ tags: [Embedded systems, data logging, radiation, Geiger counter, open-data, Saf
 brief: "This great monit shepherd will prevent you to fight against systemd."
 lovehatefeedback: false
 draft: true
-hacker_news:
+hacker_news: https://news.ycombinator.com/item?id=11557638
 ---
 
 When I play with my Raspberry Pi or host apps on my server, it always comes a time when I want my programs to automatically run at boot time. Depending on the Debian version or on the requirements the tools change, and each time I see myself searching the web for a way to do it properly. And that's not a life! A so common need should be easier to fulfilled.
