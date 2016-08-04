@@ -4,10 +4,23 @@ author: yoan
 title: "The Equisense Coffee Machine"
 categories: [Hacking]
 tags: [Coffee, Hack, Embedded systems, Slack]
-brief: "Or how to hack a Senseo machine so it can be controlled from Slack."
+brief: "We show you how to hack a Senseo machine to be remote controlled."
 lovehatefeedback: true
 draft: true
 ---
+
+----------
+Find movie extract. Use an Ad of Nespresso?
+
+Snatch: 43:20 No thanks you X, I'm sweet enough
+The Way of the Samurai: 27:50
+Taxi Driver: 23:30
+Pulp fiction
+----------
+
+One week ago² I was invited to the Equisense brand new office (Facebook pic) for their first Hackaton. Whether doing a hackaton in 2016 is a late-arrival game that should be reserved to jetlag corporate company, it was a nice moment!
+
+² Note: Actually it was more like two month ago, but I do am very lazy, only now I publish the article. This don't make really serious, and who Morbleu don't want to be serious? So I prefer to falsify the reality.
 
 What else?
 

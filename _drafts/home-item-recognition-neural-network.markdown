@@ -18,3 +18,7 @@ The iPhone 4s is the brains of the operation. It captures my motion through the 
 The recognition is not perfectly real-time. There is an inherent lag of ~3 to 4 seconds. This is because the system uses a 4-second window (with a sliding length of 1 second) to compute the input vectors for the neural network. Thus the system predicts the correct label approximately 3 to 4 seconds after an activity has been started.
 
 http://www.dilpreetsingh.me/activity-recognition
+
+See
+* http://jmgomez.me/a-fruit-image-classifier-with-python-and-simplecv/
+* Caffe
