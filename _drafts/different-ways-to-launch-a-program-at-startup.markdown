@@ -3,8 +3,8 @@ layout: post
 author: yoan
 title: "The 7 Different Ways To Launch A Program At Startup"
 categories: [sysadmin]
-tags: [Embedded systems, data logging, Raspberry Pi, Geiger counter, radiation]
-brief: "YtoTech provides you ray events for a real random generator."
+tags: [Sysadmon, Linux, Unix, Daemon]
+brief: "Start automatically our programs at boot time on Unix distributions."
 lovehatefeedback: true
 draft: true
 ---
@@ -25,9 +25,8 @@ So how to deamonize.
 * Debian start-stop-deamon http://manpages.ubuntu.com/manpages/xenial/en/man8/start-stop-daemon.8.html
 * Unix daemon http://man7.org/linux/man-pages/man3/daemon.3.html http://libslack.org/daemon/manpages/daemon.1.html http://www.libslack.org/daemon/ http://blog.terminal.com/using-daemon-to-daemonize-your-programs/
 
-The Seven Ways To Run Your Program At Startup:
+# The Seven Ways To Run Your Program At Startup:
 * Unix daemontools http://cr.yp.to/daemontools.html https://isotope11.com/blog/manage-your-services-with-daemontools https://en.wikipedia.org/wiki/Daemontools http://blog.rtwilson.com/how-to-set-up-a-simple-service-to-run-in-the-background-on-a-linux-machine-using-daemontools/
-* Deamon ()
 * SysV init.d (Debian, Slackware, RedHat) https://debian-administration.org/article/28/Making_scripts_run_at_boot_time_with_Debian http://www.slackware.com/config/init.php https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/Installation_Guide/s1-boot-init-shutdown-sysv.html
 * Systemd (most current Linux distribution, even ArchLinux, except last resistants like Slackware) http://unix.stackexchange.com/questions/47695/how-to-write-startup-script-for-systemd https://wiki.debian.org/systemd
 * Upstart (Ubuntu 9.10 to Ubunto 14.10, RedHat and CentOS 6) http://upstart.ubuntu.com/getting-started.html
