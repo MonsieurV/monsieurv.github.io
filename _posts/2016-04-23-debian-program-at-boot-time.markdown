@@ -1,12 +1,12 @@
 ---
 layout: post
 author: yoan
-title: "Run your programs at startup on Unix distributions"
+title: "Run Your Programs at Startup on Unix Distributions"
 categories: [sysadmin]
 tags: [Embedded systems, data logging, radiation, Geiger counter, open-data, Safecast, radiation]
 brief: "This great monit shepherd will prevent you to fight against systemd."
 lovehatefeedback: false
-draft: true
+draft: false
 hacker_news: https://news.ycombinator.com/item?id=11557638
 ---
 

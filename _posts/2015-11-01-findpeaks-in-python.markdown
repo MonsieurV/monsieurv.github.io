@@ -1,7 +1,7 @@
 ---
 layout: post
 author: yoan
-title: "Peak detection in the Python world"
+title: "Peak Detection in the Python World"
 categories: [Digital signal processing]
 tags: [DSP, Python]
 brief: "An overview of the peak detection algorithms in Python."

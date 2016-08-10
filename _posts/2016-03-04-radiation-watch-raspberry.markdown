@@ -1,7 +1,7 @@
 ---
 layout: post
 author: yoan
-title: "A Geiger counter for your house - Part 2"
+title: "A Geiger Counter for Your House - Part 2"
 categories: [Embedded systems]
 tags: [Embedded systems, data logging, Raspberry Pi, Geiger counter, radiation]
 brief: "Keep an eye on those sneaky gamma rays using your Raspberry Pi."

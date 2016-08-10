@@ -1,7 +1,7 @@
 ---
 layout: post
 author: yoan
-title: "A Geiger counter for your house - Part 3"
+title: "A Geiger Counter for Your House - Part 3"
 categories: [Embedded systems]
 tags: [Embedded systems, data logging, radiation, Geiger counter, open-data, Safecast, radiation]
 brief: "Featuring the Safecast open-data initiative."

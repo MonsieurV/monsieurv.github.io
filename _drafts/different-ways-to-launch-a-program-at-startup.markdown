@@ -1,26 +1,84 @@
 ---
 layout: post
 author: yoan
-title: "The 7 Different Ways To Launch A Program At Startup"
+title: "Seven Different Ways To Run A Program At Startup"
 categories: [sysadmin]
 tags: [Sysadmon, Linux, Unix, Daemon]
-brief: "Start automatically our programs at boot time on Unix distributions."
+brief: "A comprehensive guide to run a programs at boot time on Unix distributions."
 lovehatefeedback: true
 draft: true
+hacker_news: https://news.ycombinator.com/item?id=11557638
 ---
 
-In a previous article I was presenting a pragmatic way to automatically start a program at boot time on a Raspberry Pi Raspbian OS. As it was working, I was meditating on the fact that my article was not... a great factual introduction on how
+In a [previous article](2016/04/23/debian-program-at-boot-time/) I was presenting a pragmatic way to start a program at boot time on a Debian-like OS. While the presented solution - using Monit - is effective, I was meditating on the fact that my article was not... a great factual introduction on how to create daemons!
 
-First, if we want to have a program running at startup, we need it to be a real deamon process.
+Also, it missed the opportunity to present the alternative ways of running a program at startup. So here we are again: this time for a more complete review of the use of various init systems. And other trickier ways to do the job.
 
-But after getting any further, man, what's a deamon? We will stick to the Richard Steven definition of Unix deamon. See http://linux.die.net/man/1/daemonize
+#### What's This <a href="https://www.youtube.com/watch?v=p_ZxDNZjzVk">Daemon</a>{%include footnote_ref.html number="1" %}?
+
+
+First, if we want to have a program running at startup, we need it to be a real daemon process.
+
+For the purpose of that article, we'll take this simple - yet essential - Python program:
+
+(Find another example, as printing in a daemon is not very... smart. Yeah, but we can got the log anyway, so that's not too bad.)
+
+{% highlight Python %}
+import time
+import datetime
+periodOfLife = 10
+
+while True:
+  print("It is {0} - that's {1} seconds less to live.".format(
+    datetime.datetime.now().strftime('%H:%M:%S'), periodOfLife))
+  time.sleep(periodOfLife)
+{% endhighlight %}
+
+Which will output something like this:
+
+{% highlight plaintext %}
+It is 11:07:22 - that's 10 seconds less to live.
+It is 11:07:32 - that's 10 seconds less to live.
+It is 11:07:42 - that's 10 seconds less to live.
+It is 11:07:52 - that's 10 seconds less to live.
+It is 11:08:02 - that's 10 seconds less to live.
+{% endhighlight %}
+
+Admittedly, this program is a bit depressing. A real daemon.
+
+Well... in fact... not yet!
+
+If we stick to the Richard Steven definition{%include footnote_ref.html number="2" %}, an Unix daemon have the following properties:
+
+* Being Nice ...
+* ... Steady ...
+* ... And Slow!
+
+https://en.wikipedia.org/wiki/Daemon_(computing)#Creation
+
+The most important point is:
+
+<centerheadlinelikegaryhalbert>
+a daemon is not simply a process running in background
+</centerheadlinelikegaryhalbert>
+
+If we take our Python program and launch it in background with `python daemonOfLife.py &`, it will have the following side-effects:
+
+* The process will output to the terminal
+* The process will be subject to control from the terminal
+
+If we exit our terminal... the process will be killed! This is actually very logical, as our process is a children of the terminal process. The latter being killed - the former is subsequently killed // the former too.
+
+#### Yeah Sure! But How Do You Create This Daemon?
+
 
 In practical how's a deamon created? See http://stackoverflow.com/questions/3430330/best-way-to-make-a-shell-script-daemon
 http://www.itp.uzh.ch/~dpotter/howto/daemonize
 
 So how to deamonize.
+
 * By coding (see up)
-* Unix daemonize http://software.clapper.org/daemonize/ http://linux.die.net/man/1/daemonize https://github.com/bmc/daemonize
+* Unix daemonize http://linux.die.net/man/1/daemonize http://software.clapper.org/daemonize/ http://linux.die.net/man/1/daemonize https://github.com/bmc/daemonize
 * Nohup? http://linux.die.net/man/1/nohup http://stackoverflow.com/questions/525247/how-do-i-daemonize-an-arbitrary-script-in-unix
 * Debian start-stop-deamon http://manpages.ubuntu.com/manpages/xenial/en/man8/start-stop-daemon.8.html
 * Unix daemon http://man7.org/linux/man-pages/man3/daemon.3.html http://libslack.org/daemon/manpages/daemon.1.html http://www.libslack.org/daemon/ http://blog.terminal.com/using-daemon-to-daemonize-your-programs/
@@ -51,3 +109,11 @@ Other source:
 
 Where to publish my article:
 * http://stackoverflow.com/questions/15934729/best-tool-to-code-a-linux-daemon-that-runs-indefinitely
+
+<br>
+
+##### Notes
+
+{% include footnote.html number="1" note="Sorry for the cheesy music, I just can't help myself." %}
+
+{% include footnote.html number="2" note="As defined in W. Richard Stevens' 1990 book, _Unix Network Programming_ (Addison-Wesley, 1990). [See source](https://books.google.fr/books?id=ptSC4LpwGA0C&pg=PA363#v=onepage&q&f=false)." %}
