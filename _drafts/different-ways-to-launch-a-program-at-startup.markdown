@@ -1,7 +1,7 @@
 ---
 layout: post
 author: yoan
-title: "Seven Different Ways To Run A Program At Startup"
+title: "Seven Ways To Start A Program At Boot Time"
 categories: [sysadmin]
 tags: [Sysadmon, Linux, Unix, Daemon]
 brief: "A comprehensive guide to run a programs at boot time on Unix distributions."
@@ -48,10 +48,14 @@ Admittedly, this program is a bit depressing. A real daemon.
 
 Well... in fact... not yet!
 
-If we stick to the Richard Steven definition{%include footnote_ref.html number="2" %}, an Unix daemon have the following properties:
+If we stick to the Richard Steven definition{%include footnote_ref.html number="2" %}, an Unix daemon must have the following properties:
 
-* Being Nice ...
-* ... Steady ...
+Not Good! Abstract that in 3 or 4 points. Then in the following section list the action to take to convert the program in a daemon.
+
+* Its process must be detached from the terminal that started it;
+* Be a process group and session group leader;
+* Have all the file descriptors closed;
+* Not be mounted in '/'
 * ... And Slow!
 
 https://en.wikipedia.org/wiki/Daemon_(computing)#Creation
@@ -64,10 +68,10 @@ a daemon is not simply a process running in background
 
 If we take our Python program and launch it in background with `python daemonOfLife.py &`, it will have the following side-effects:
 
-* The process will output to the terminal
-* The process will be subject to control from the terminal
+* The process will output to the terminal;
+* The process will be subject to control from the terminal.
 
-If we exit our terminal... the process will be killed! This is actually very logical, as our process is a children of the terminal process. The latter being killed - the former is subsequently killed // the former too.
+Indeed if we exit our terminal... the process will be killed! This is actually very logical, as our process is a children of the terminal process. The latter being killed - the former is subsequently killed // the former too.
 
 #### Yeah Sure! But How Do You Create This Daemon?
 
@@ -78,10 +82,32 @@ http://www.itp.uzh.ch/~dpotter/howto/daemonize
 So how to deamonize.
 
 * By coding (see up)
+
+Example of Python code daemonizing.
+http://stackoverflow.com/questions/1603109/how-to-make-a-python-script-run-like-a-service-or-daemon-in-linux/6374881#6374881
+https://web.archive.org/web/20160305151936/http://www.jejik.com/articles/2007/02/a_simple_unix_linux_daemon_in_python/
+http://blog.scphillips.com/posts/2013/07/getting-a-python-script-to-run-in-the-background-as-a-service-on-boot/
+https://github.com/serverdensity/python-daemon
+
+#### Sorry, But Actually You Better Just Use These Tools
+
 * Unix daemonize http://linux.die.net/man/1/daemonize http://software.clapper.org/daemonize/ http://linux.die.net/man/1/daemonize https://github.com/bmc/daemonize
 * Nohup? http://linux.die.net/man/1/nohup http://stackoverflow.com/questions/525247/how-do-i-daemonize-an-arbitrary-script-in-unix
 * Debian start-stop-deamon http://manpages.ubuntu.com/manpages/xenial/en/man8/start-stop-daemon.8.html
 * Unix daemon http://man7.org/linux/man-pages/man3/daemon.3.html http://libslack.org/daemon/manpages/daemon.1.html http://www.libslack.org/daemon/ http://blog.terminal.com/using-daemon-to-daemonize-your-programs/
+* daemoncmd https://pypi.python.org/pypi/daemoncmd/0.1.0
+* launchd http://launchd.info/
+* perp http://b0llix.net/perp/ (hacky!)
+* runit http://smarden.org/runit/
+* zdaemon https://pypi.python.org/pypi/zdaemon/2.0.4
+
+#### Ok, Ok, We Have A Daemon. What About Boot Time?
+
+Ergh! We're not just here yet.
+
+To run your daemon at start-up, you simply need to be started... at boottime. Who's manage boottime sequence? The init system of your distribution!
+
+Here we go, this is a distribution dependant.
 
 # The Seven Ways To Run Your Program At Startup:
 * Unix daemontools http://cr.yp.to/daemontools.html https://isotope11.com/blog/manage-your-services-with-daemontools https://en.wikipedia.org/wiki/Daemontools http://blog.rtwilson.com/how-to-set-up-a-simple-service-to-run-in-the-background-on-a-linux-machine-using-daemontools/
