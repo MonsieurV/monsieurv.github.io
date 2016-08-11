@@ -52,11 +52,9 @@ If we stick to the Richard Steven definition{%include footnote_ref.html number="
 
 Not Good! Abstract that in 3 or 4 points. Then in the following section list the action to take to convert the program in a daemon.
 
-* Its process must be detached from the terminal that started it;
-* Be a process group and session group leader;
-* Have all the file descriptors closed;
-* Not be mounted in '/'
-* ... And Slow!
+* Its process must be detached from the terminal that started it; (Be a process group and session group leader)
+* Be independent from file system changes; (Not be mounted in '/')
+* Do not react on X/Y signals; (Have all the file descriptors closed)
 
 https://en.wikipedia.org/wiki/Daemon_(computing)#Creation
 
@@ -71,7 +69,8 @@ If we take our Python program and launch it in background with `python daemonOfL
 * The process will output to the terminal;
 * The process will be subject to control from the terminal.
 
-Indeed if we exit our terminal... the process will be killed! This is actually very logical, as our process is a children of the terminal process. The latter being killed - the former is subsequently killed // the former too.
+Indeed if we exit our terminal... the process will be killed! This actually make total sense, as our process is a children of the terminal process. The latter being killed - the former is subsequently killed // the former too.
+(Not trivial speach. Speak lound and check what's natural and what's not. Don't try hard to be 'expertaly'!)
 
 #### Yeah Sure! But How Do You Create This Daemon?
 
