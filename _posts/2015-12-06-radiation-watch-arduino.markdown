@@ -20,7 +20,7 @@ Initially conceived to be connected to an iPhone, Radation Watch now provides an
 
 #### What are these rays?
 
-In you don't remember well we usually classify radiations under three hats: alpha, beta and gamma rays. Alpha and beta radiation are charged particles, whereas gamma rays are photons of electromagnetic energy, with no charge and mass. They are all three considered ionizing radiation - which means they can [alter][alter_matter] the matter they go through -, but have very different penetrating and ionizing abilities due to their respective mass, size and nature.
+If you don't remember well we usually classify radiations under three hats: alpha, beta and gamma rays. Alpha and beta radiation are charged particles, whereas gamma rays are photons of electromagnetic energy, with no charge and mass. They are all three considered ionizing radiation - which means they can [alter][alter_matter] the matter they go through -, but have very different penetrating and ionizing abilities due to their respective mass, size and nature.
 
 Alpha and beta radiation can be stopped by an aluminum foil: if you don't [play with radioactive sources][marie_curie_death] or [ingest contaminated substances][radium_girls] you hopefully won't be exposed to significant level of alpha and beta rays, except maybe from [the radon in your house][radon_house]. This contrasts with the very high frequency electromagnetic nature of gamma rays, giving them a super high ability to pass through matter: imagine your Wifi on steroids, with a frequency of above [10 exahertz][spectrum] and an [energy][electronvolt] more than 100,000,000 times greater. Yes, it can cooks your DNA like your microwave boils your Chinese noodles.
 
@@ -80,7 +80,7 @@ Edit March 14th, 2016: The [second part](/2016/03/04/radiation-watch-raspberry/)
 
 <br>
 
-**Thanks** to Nicolas C. for reading drafts of this, to Thomas Weisbach for having managed the license issue and to Nicolas Michaux for giving me the idea.
+**Thanks** to Nicolas C. for reading drafts of this, to Thomas Weisbach for having managed the license issue and to Nicolas Michaux for giving me the idea. Also props to Grégoire Martinache to spot the typos no other can see. ;-)
 
 [effi_synchrone]: http://www.effi-synchrone.com
 [rw]: http://www.radiation-watch.org/
