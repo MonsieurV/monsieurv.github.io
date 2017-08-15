@@ -1,0 +1,38 @@
+{
+  "custom_classes": 0,
+  "images": [
+    {
+      "classifiers": [
+        {
+          "classes": [
+            {
+              "class": "dark red color",
+              "score": 0.79
+            },
+            {
+              "class": "credenza (sideboard)",
+              "score": 0.753,
+              "type_hierarchy": "/furniture/credenza (sideboard)"
+            },
+            {
+              "class": "furniture",
+              "score": 0.825
+            },
+            {
+              "class": "ottoman (seat)",
+              "score": 0.554,
+              "type_hierarchy": "/furniture/ottoman (seat)"
+            },
+            {
+              "class": "seat",
+              "score": 0.57
+            }
+          ],
+          "classifier_id": "default",
+          "name": "default"
+        }
+      ]
+    }
+  ],
+  "images_processed": 1
+}

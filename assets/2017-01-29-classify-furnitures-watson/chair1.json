@@ -1,0 +1,64 @@
+{
+    "custom_classes": 0,
+    "images": [
+        {
+            "classifiers": [
+                {
+                    "classes": [
+                        {
+                            "class": "swivel chair",
+                            "score": 0.696,
+                            "type_hierarchy": "/furniture/seat/swivel chair"
+                        },
+                        {
+                            "class": "chair",
+                            "score": 0.911
+                        },
+                        {
+                            "class": "seat",
+                            "score": 0.927
+                        },
+                        {
+                            "class": "furniture",
+                            "score": 0.927
+                        },
+                        {
+                            "class": "easy chair",
+                            "score": 0.665,
+                            "type_hierarchy": "/furniture/seat/armchair/easy chair"
+                        },
+                        {
+                            "class": "armchair",
+                            "score": 0.772
+                        },
+                        {
+                            "class": "rocker",
+                            "score": 0.594,
+                            "type_hierarchy": "/device/support/rocker"
+                        },
+                        {
+                            "class": "support",
+                            "score": 0.753
+                        },
+                        {
+                            "class": "device",
+                            "score": 0.753
+                        },
+                        {
+                            "class": "arm",
+                            "score": 0.554,
+                            "type_hierarchy": "/device/support/arm"
+                        },
+                        {
+                            "class": "beige color",
+                            "score": 1
+                        }
+                    ],
+                    "classifier_id": "default",
+                    "name": "default"
+                }
+            ]
+        }
+    ],
+    "images_processed": 1
+}

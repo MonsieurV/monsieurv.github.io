@@ -1,0 +1,59 @@
+{
+  "custom_classes": 0,
+  "images": [
+    {
+      "classifiers": [
+        {
+          "classes": [
+            {
+              "class": "backrest",
+              "score": 0.805,
+              "type_hierarchy": "/device/support/backrest"
+            },
+            {
+              "class": "support",
+              "score": 0.805
+            },
+            {
+              "class": "device",
+              "score": 0.805
+            },
+            {
+              "class": "rack",
+              "score": 0.565,
+              "type_hierarchy": "/framework/rack"
+            },
+            {
+              "class": "framework",
+              "score": 0.566
+            },
+            {
+              "class": "tea cart",
+              "score": 0.554,
+              "type_hierarchy": "/vehicle/handcart/tea cart"
+            },
+            {
+              "class": "handcart",
+              "score": 0.558
+            },
+            {
+              "class": "vehicle",
+              "score": 0.558
+            },
+            {
+              "class": "sage green color",
+              "score": 0.877
+            },
+            {
+              "class": "coal black color",
+              "score": 0.518
+            }
+          ],
+          "classifier_id": "default",
+          "name": "default"
+        }
+      ]
+    }
+  ],
+  "images_processed": 1
+}

@@ -1,0 +1,41 @@
+{
+  "custom_classes": 0,
+  "images": [
+    {
+      "classifiers": [
+        {
+          "classes": [
+            {
+              "class": "console table",
+              "score": 0.796,
+              "type_hierarchy": "/furniture/console table"
+            },
+            {
+              "class": "table",
+              "score": 0.879
+            },
+            {
+              "class": "furniture",
+              "score": 0.884
+            },
+            {
+              "class": "writing desk",
+              "score": 0.554
+            },
+            {
+              "class": "reddish brown color",
+              "score": 0.92
+            },
+            {
+              "class": "sage green color",
+              "score": 0.913
+            }
+          ],
+          "classifier_id": "default",
+          "name": "default"
+        }
+      ]
+    }
+  ],
+  "images_processed": 1
+}

@@ -1,0 +1,45 @@
+{
+  "custom_classes": 0,
+  "images": [
+    {
+      "classifiers": [
+        {
+          "classes": [
+            {
+              "class": "studio couch",
+              "score": 0.817,
+              "type_hierarchy": "/furniture/seat/sofa/convertible/studio couch"
+            },
+            {
+              "class": "convertible",
+              "score": 0.82
+            },
+            {
+              "class": "sofa",
+              "score": 0.903
+            },
+            {
+              "class": "seat",
+              "score": 0.906
+            },
+            {
+              "class": "furniture",
+              "score": 0.91
+            },
+            {
+              "class": "beige color",
+              "score": 0.946
+            },
+            {
+              "class": "alabaster color",
+              "score": 0.734
+            }
+          ],
+          "classifier_id": "default",
+          "name": "default"
+        }
+      ]
+    }
+  ],
+  "images_processed": 1
+}

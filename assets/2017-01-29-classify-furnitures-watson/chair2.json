@@ -1,0 +1,59 @@
+{
+  "custom_classes": 0,
+  "images": [
+    {
+      "classifiers": [
+        {
+          "classes": [
+            {
+              "class": "straight chair",
+              "score": 0.687,
+              "type_hierarchy": "/furniture/seat/straight chair"
+            },
+            {
+              "class": "chair",
+              "score": 0.771
+            },
+            {
+              "class": "seat",
+              "score": 0.88
+            },
+            {
+              "class": "furniture",
+              "score": 0.881
+            },
+            {
+              "class": "arm",
+              "score": 0.651,
+              "type_hierarchy": "/device/support/arm"
+            },
+            {
+              "class": "support",
+              "score": 0.778
+            },
+            {
+              "class": "device",
+              "score": 0.778
+            },
+            {
+              "class": "backrest",
+              "score": 0.554,
+              "type_hierarchy": "/device/support/backrest"
+            },
+            {
+              "class": "reddish brown color",
+              "score": 0.889
+            },
+            {
+              "class": "beige color",
+              "score": 0.613
+            }
+          ],
+          "classifier_id": "default",
+          "name": "default"
+        }
+      ]
+    }
+  ],
+  "images_processed": 1
+}

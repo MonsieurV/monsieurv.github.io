@@ -1,0 +1,41 @@
+{
+  "custom_classes": 0,
+  "images": [
+    {
+      "classifiers": [
+        {
+          "classes": [
+            {
+              "class": "chesterfield (sofa)",
+              "score": 0.971,
+              "type_hierarchy": "/furniture/seat/convertible/chesterfield (sofa)"
+            },
+            {
+              "class": "convertible",
+              "score": 0.973
+            },
+            {
+              "class": "sofa",
+              "score": 0.984
+            },
+            {
+              "class": "seat",
+              "score": 0.984
+            },
+            {
+              "class": "furniture",
+              "score": 0.984
+            },
+            {
+              "class": "beige color",
+              "score": 0.993
+            }
+          ],
+          "classifier_id": "default",
+          "name": "default"
+        }
+      ]
+    }
+  ],
+  "images_processed": 1
+}

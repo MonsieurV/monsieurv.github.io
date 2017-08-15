@@ -1,0 +1,42 @@
+{
+  "custom_classes": 0,
+  "images": [
+    {
+      "classifiers": [
+        {
+          "classes": [
+            {
+              "class": "straight chair",
+              "score": 0.902,
+              "type_hierarchy": "/furniture/seat/straight chair"
+            },
+            {
+              "class": "chair",
+              "score": 0.963
+            },
+            {
+              "class": "seat",
+              "score": 0.97
+            },
+            {
+              "class": "furniture",
+              "score": 0.971
+            },
+            {
+              "class": "folding chair",
+              "score": 0.554,
+              "type_hierarchy": "/furniture/seat/folding chair"
+            },
+            {
+              "class": "reddish brown color",
+              "score": 0.943
+            }
+          ],
+          "classifier_id": "default",
+          "name": "default"
+        }
+      ]
+    }
+  ],
+  "images_processed": 1
+}
