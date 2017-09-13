@@ -1,5 +1,29 @@
-# YtoTech blog
+# Simple, Distributed Software, by YtoTech
 
-See http://blog.ytotech.com
+This is the YtoTech tech blog.
 
-Check https://www.cyphar.com/blog/ for style and presentation.
+Live on http://blog.ytotech.com
+
+# Writer Guide
+
+## Install
+
+Install dependencies:
+
+```
+make install
+```
+
+## Test locally
+
+Test locally, by viewing all unpublished drafts:
+
+```
+make serve-drafts
+```
+
+See the blog as will be deployed:
+
+```
+make serve
+```
