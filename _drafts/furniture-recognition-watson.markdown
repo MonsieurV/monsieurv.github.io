@@ -49,7 +49,8 @@ Neats!
 https://cloud.google.com/vision/
 
 Not checked
-https://cloudsight.ai/
-https://www.clarifai.com/
-https://imagga.com/
-https://www.microsoft.com/cognitive-services/en-us/computer-vision-api
+* https://cloudsight.ai/
+* https://www.clarifai.com/
+* https://imagga.com/
+* https://www.microsoft.com/cognitive-services/en-us/computer-vision-api
+* https://aws.amazon.com/rekognition/?nc1=h_ls
