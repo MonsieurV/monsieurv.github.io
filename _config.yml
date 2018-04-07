@@ -13,11 +13,11 @@ name: Simple, distributed software
 description: Blog written by YtoTech members about complex and distributed software hopefully made simple and fun.
 url: http://blog.ytotech.com
 author:
-    name: Yto Tech members
-    email: hello@ytotech.com
-    uri: http://www.ytotech.com/people/
+  name: YtoTech members
+  email: hello@ytotech.com
+  uri: http://www.ytotech.com/
 
 sass:
-    style: compressed
+  style: compressed
 
 exclude: [vendor]
