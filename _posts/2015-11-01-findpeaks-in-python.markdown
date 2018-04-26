@@ -14,7 +14,7 @@ of the MatLab [`findpeaks` function][findpeaks_ref] in the Python world.
 
 #### Detecting peaks with MatLab
 
-For those not familiar to digital signal processing, peak detection is as easy to understand as it sounds: this is the process of finding peaks - we also names them local maxima or local minima - in a signal. The MatLab DSP Toolbox makes this super easy with its `findpeaks` function. Saying your want to search local maxima in an audio signal, for example 2000 samples of the Laurent Garnier famous track Cripsy Bacon, all you have to do is:
+For those not familiar to digital signal processing, peak detection is as easy to understand as it sounds: this is the process of finding peaks - we also names them local maxima or local minima - in a signal. The MatLab DSP Toolbox makes this super easy with its `findpeaks` function. Saying your want to search local maxima in an audio signal, for example [2000 samples][cb_samples] of the Laurent Garnier famous track Cripsy Bacon, all you have to do is:
 
 {% highlight matlab %}
 cb = audioread('Crispy_Bacon.wav');
@@ -131,3 +131,4 @@ This time before the peak resolution, the [`baseline` function][baseline_ref] wi
 [baseline_ref]: http://pythonhosted.org/PeakUtils/reference.html#peakutils.baseline.baseline
 [baseline_example]: http://pythonhosted.org/PeakUtils/tutorial_a.html#estimating-and-removing-the-baseline
 [highpass_filter]: http://www.nws.noaa.gov/os/csd/pds/PCU2/statistics/Stats/part2/Filter_HP.htm
+[cb_samples]: https://github.com/MonsieurV/py-findpeaks/blob/b7882a50aabed3044411b849119dda1696dbd0c8/tests/vector.py#L8
