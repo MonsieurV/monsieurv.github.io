@@ -27,14 +27,15 @@ layout: posts
   {% if page.draft == true %}
     <hr>
     <em><p>
-      Public draft, still under revision. Please report errors, typos and
-      comments to <a href="mailto:{{ author.email }}">the author</a>.
+      Public draft, under revision. Please shamelessly
+      <a href="mailto:{{ author.email }}" title="{{ author.name }}">report me</a>
+      errors, typos and comments.
     </p></em>
   {% endif %}
   {% if page.draft != true and page.lovehatefeedback == true %}
     <hr>
-    <p>Love it, hate it? Let me know.</p>
-    <p><a href="mailto:yoan@ytotech.com">yoan@ytotech.com</a></p>
+    <p>Love it, hate it? Let me know. :)</p>
+    <p><a href="mailto:{{ author.email }}">{{ author.email }}</a></p>
   {% endif %}
   {% if page.hacker_news %}
     <hr>
