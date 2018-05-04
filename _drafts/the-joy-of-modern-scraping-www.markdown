@@ -209,6 +209,12 @@ We have come a long way.
 
 Webapps days
 Node and NPM [fanboys](https://www.youtube.com/watch?v=bzkRVzciAZg)
+Angular opened the way for [single-page applications](https://en.wikipedia.org/wiki/Single-page_application)
+React consecrated it.
+Ajax by itself no fun anymore. `XMLHttpRequest` disappearing for `fetch`.
+Rest API are not even anymore good (GraphQL)
+
+Who would expect data to be returned from the HTML page deserved by the web server?
 
 --------------------------
 
