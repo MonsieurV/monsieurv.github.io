@@ -1,6 +1,7 @@
 plugins:
   - jekyll-feed
 exclude: [CNAME, Gemfile, Gemfile.lock, README.md, Makefile]
+# TODO Be universal: UTC time.
 timezone: Europe/Paris
 markdown: kramdown
 highlighter: rouge
@@ -10,12 +11,12 @@ repository: https://github.com/MonsieurV/monsieurv.github.io
 
 
 name: Simple, distributed software
-description: Blog written by YtoTech members about complex and distributed software hopefully made simple and fun.
+description: Blog by YtoTech members on complex and distributed software - made simple and fun!
 url: http://blog.ytotech.com
 author:
   name: YtoTech members
   email: hello@ytotech.com
-  uri: http://www.ytotech.com/
+  uri: https://www.ytotech.com/
 
 sass:
   style: compressed
