@@ -51,3 +51,5 @@ There's not so much chance you choose PHP for its beauty / the beauty of the lan
 
 In the [] (near) every evolving (great) language copy something from Lisp [Link to PG],
 what could do PHP and how it will be better.
+
+Refacto sample? https://github.com/YtoTech/effi-synchrone-webapp/blame/master/app_zend/library/App/Model/Badge/BadgeGenerator.php
