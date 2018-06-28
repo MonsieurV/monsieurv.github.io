@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
-gem 'github-pages', '>= 164'
-gem 'jekyll-feed'
+gem 'github-pages', '>= 177'
+gem 'jekyll-feed', '>= 0.9.2'
