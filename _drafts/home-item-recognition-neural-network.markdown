@@ -22,3 +22,7 @@ http://www.dilpreetsingh.me/activity-recognition
 See
 * http://jmgomez.me/a-fruit-image-classifier-with-python-and-simplecv/
 * Caffe
+
+Use pretrain layers.
+See Kera
+https://keras.io/applications/
