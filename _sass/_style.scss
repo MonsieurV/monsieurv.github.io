@@ -72,6 +72,12 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
   visibility: hidden;
 }
 
+/* Forms & inputs */
+
+select {
+    max-width: 100%;
+}
+
 /* Sections */
 
 header,
