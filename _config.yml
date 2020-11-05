@@ -6,7 +6,6 @@ timezone: Europe/Paris
 markdown: kramdown
 highlighter: rouge
 permalink: /:year/:month/:day/:title/
-google_analytics_id: UA-68404966-2
 repository: https://github.com/MonsieurV/monsieurv.github.io
 
 
